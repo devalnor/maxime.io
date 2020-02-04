@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Montreal Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montreal Regular"),
+    url("/static/fonts/Montreal-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Montreal Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Montreal Bold"),
+    url("/static/fontsMontreal-Bold.woff") format("woff");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Montreal Regular", serif;
+  box-sizing: border-box;
+}
