@@ -1,0 +1,19 @@
+{
+  "name": "maxime.io",
+  "version": "1.0.0",
+  "description": "Maxime de Visscher Pro Website 2020",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "author": "Maxime de Visscher",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^9.2.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^5.0.0",
+    "typeface-montserrat": "0.0.75"
+  }
+}
