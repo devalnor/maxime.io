@@ -12,7 +12,7 @@ const Style = styled.section`
   width: 100%;
   height: 800px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   padding-left: 200px;
   padding-right: 200px;
 `;
@@ -23,7 +23,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  xbackground-color: red;
 `;
 
 const Me = styled.div`
@@ -59,18 +58,12 @@ const About = styled.div`
   }
 `;
 
-const FullName = styled.div`
-  background-color: ${colors.blueFlash};
-  padding: 20px;
-`;
-
 const Introduction = () => (
   <Style>
     <Container>
       <div />
       <Quote>
-        Developing innovative solutions that bring Customer Experience into //
-        eslint-disable-next-line react/jsx-one-expression-per-line the business
+        Developing innovative solutions that bring Customer Experience into the business
         goals <u>is a passion</u>.
       </Quote>
       <About>
