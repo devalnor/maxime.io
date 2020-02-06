@@ -1,11 +1,11 @@
-import Nav from '../components/Nav';
-
-import Introduction from '../components/Introduction';
-import Skills from '../components/Skills';
+import Introduction from 'components/Introduction';
+import Nav from 'components/Nav';
+import Skills from 'components/Skills';
+import { MediaContextProvider } from 'shared/utils/responsive';
 
 function HomePage() {
   return (
-    <>
+    <MediaContextProvider>
       <header>
         <Nav />
       </header>
@@ -13,7 +13,7 @@ function HomePage() {
         <Introduction />
         <Skills />
       </main>
-    </>
+    </MediaContextProvider>
   );
 }
 
