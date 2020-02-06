@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "Maxime de Visscher Pro Website 2020",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "start": "next start"
+    "dev": "NODE_PATH=. next",
+    "build": "NODE_PATH=. next build",
+    "start": "NODE_PATH=. next start"
   },
   "author": "Maxime de Visscher",
   "license": "ISC",
   "dependencies": {
+    "@artsy/fresnel": "^1.0.13",
+    "framer-motion": "^1.8.4",
     "next": "^9.2.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
