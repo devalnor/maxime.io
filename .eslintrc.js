@@ -1,8 +1,9 @@
 module.exports = {
   env: {
-    es6: true,
+   
     node: true,
     browser: true,
+    es2020: true,
   },
   extends: ['plugin:react/recommended', 'airbnb'],
   globals: {
@@ -26,5 +27,13 @@ module.exports = {
       'warn',
       { vars: 'all', args: 'after-used', ignoreRestSiblings: false }
     ]
+  },
+  "settings": {
+    // Allows us to lint absolute imports within codebase
+    "import/resolver": {
+      "node": {
+        "moduleDirectory": ["node_modules", "."]
+      }
+    }
   }
 };
