@@ -19,6 +19,7 @@
   margin: 0;
   font-family: 'Montserrat', serif;
   box-sizing: border-box;
+  letter-spacing: -0.031em;
 }
 
 body {
