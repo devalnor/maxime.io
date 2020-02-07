@@ -1,6 +1,8 @@
 import Introduction from 'components/Introduction';
 import Nav from 'components/Nav';
 import Skills from 'components/Skills';
+import Technologies from 'components/Technologies';
+
 import { MediaContextProvider } from 'shared/utils/responsive';
 
 function HomePage() {
@@ -12,6 +14,7 @@ function HomePage() {
       <main>
         <Introduction />
         <Skills />
+        <Technologies />
       </main>
     </MediaContextProvider>
   );

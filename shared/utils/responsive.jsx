@@ -8,7 +8,8 @@ export const sizes = {
   sm: 0,
   md: 768,
   lg: 1024,
-  xl: 1192
+  xl: 1192,
+  ipad: 900
 };
 
 const AppMedia = createMedia({ breakpoints: sizes });
