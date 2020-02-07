@@ -21,6 +21,12 @@ export const Style = styled.section`
   background-size: contain;
   }
 
+  /* Tablet */
+  @media (max-width: ${sizes.lg}px) {
+    //padding-left: 40px;
+  padding-right: 60px;
+  }
+
   /* mobile */
   @media (max-width: ${sizes.md}px) {
   padding-left: 40px;
@@ -35,6 +41,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left:100px;
+  /* Tablet */
+   @media (max-width: ${sizes.lg}px) {
+    padding-left:20px;
+  }
   /* mobile */
   @media (max-width: ${sizes.md}px) {
     align-items: center;
@@ -43,7 +54,7 @@ export const Container = styled.div`
 
 export const Quote = styled.div`
   font-family: 'Montreal Regular';
-  max-width: 760px;
+  max-width:778px;
   font-size: 45px;
   letter-spacing: -0.031em;
   margin-top: 30px;
@@ -51,10 +62,17 @@ export const Quote = styled.div`
   u {
     font-family: inherit;
   }
+
+
+
   /* Tablet */
   @media (max-width: ${sizes.lg}px) {
-    font-size: 40px;
-    text-align: center
+    font-size: 39px;
+  }
+
+  /* ipad  */
+  @media (max-width: ${sizes.ipad}px) and (min-width: ${sizes.md}px) {
+    font-size: 39px;
   }
 
   /* Mobile */
@@ -67,7 +85,7 @@ export const Quote = styled.div`
 
 export const About = styled.div`
   letter-spacing: -0.022em;
-  max-width: 760px;
+  max-width: 778px;
   font-size: 21px;
   font-weight: 200;
   line-height: 40px;

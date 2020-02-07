@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { colors } from 'shared/utils/theme';
 import { sizes } from 'shared/utils/responsive';
 
-import LinkedInLogo from 'public/static/img/linkedIn.svg';
+import LinkedInLogo from 'public/static/img/logos/linkedIn.svg';
 
 export const Style = styled(motion.div).attrs((props) => ({
   style: {

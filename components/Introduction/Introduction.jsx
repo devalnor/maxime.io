@@ -18,7 +18,7 @@ const Introduction = () => (
       </AuthorBox>
 
       <Quote>
-        Developing innovative solutions that bring Customer Experience into the business
+        Developing innovative solutions that bring Customer Experience into your business
         goals <u>is a passion</u>.
       </Quote>
       <About>
