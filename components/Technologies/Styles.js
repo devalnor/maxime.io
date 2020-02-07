@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { colors } from 'shared/utils/theme';
 import { sizes } from 'shared/utils/responsive';
 
 export const Style = styled.section`

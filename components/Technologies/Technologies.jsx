@@ -1,4 +1,3 @@
-import { Media } from 'shared/utils/responsive';
 import Img from 'shared/components/Img';
 import {
   Style, Container, Box, SmallTitle, Row, LogoList
