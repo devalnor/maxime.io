@@ -1,17 +1,25 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/alt-text */
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 const Img = ({
-  def, src, ...restprops
+  definitions, src, ...restprops
 }) => {
-  const srcSet = def.map((num) => `${src.split('.').slice(0, -1).join('.')}@${num}x.${src.split('.').pop()} ${num}x`);
+  const srcSet = definitions.map((def) => `${src.split('.').slice(0, -1).join('.')}@${def}.${src.split('.').pop()} ${def}`);
   return (
     <div>
       <img src={src} srcSet={srcSet} {...restprops} />
     </div>
   );
 };
+
+
+Img.propTypes = {
+  definitions: PropTypes.arrayOf(PropTypes.string).isRequired,
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired
+};
+
 
 export default Img;

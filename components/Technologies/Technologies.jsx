@@ -11,20 +11,20 @@ const Technologies = () => (
         <Box width="50%">
           <SmallTitle>Development Stack</SmallTitle>
           <LogoList>
-            <Img src="/static/img/logos/js.png" def={[2]} alt="Javascript" />
-            <Img src="/static/img/logos/ts.png" def={[2]} alt="Typescript" />
-            <Img src="/static/img/logos/react.png" def={[2]} alt="React" />
-            <Img src="/static/img/logos/graphql.png" def={[2]} alt="GraphQL" />
-            <Img src="/static/img/logos/postgre.png" def={[2]} alt="PostgreSQL" />
-            <Img src="/static/img/logos/docker.png" def={[2]} alt="Docker" />
+            <Img src="/static/img/logos/js.png" definitions={['2x']} alt="Javascript" />
+            <Img src="/static/img/logos/ts.png" definitions={['2x']} alt="Typescript" />
+            <Img src="/static/img/logos/react.png" definitions={['2x']} alt="React" />
+            <Img src="/static/img/logos/graphql.png" definitions={['2x']} alt="GraphQL" />
+            <Img src="/static/img/logos/postgre.png" definitions={['2x']} alt="PostgreSQL" />
+            <Img src="/static/img/logos/docker.png" definitions={['2x']} alt="Docker" />
           </LogoList>
         </Box>
         <Box width="50%">
           <SmallTitle>Cloud Services</SmallTitle>
           <LogoList>
-            <Img src="/static/img/logos/aws.png" def={[2]} alt="Amazon Web Service" />
-            <Img src="/static/img/logos/heroku.png" def={[2]} alt="Heroku" />
-            <Img src="/static/img/logos/azure.png" def={[2]} alt="Microsoft Azure" />
+            <Img src="/static/img/logos/aws.png" definitions={['2x']} alt="Amazon Web Service" />
+            <Img src="/static/img/logos/heroku.png" definitions={['2x']} alt="Heroku" />
+            <Img src="/static/img/logos/azure.png" definitions={['2x']} alt="Microsoft Azure" />
           </LogoList>
 
         </Box>
@@ -33,17 +33,17 @@ const Technologies = () => (
         <Box width="50%">
           <SmallTitle>Prototyping</SmallTitle>
           <LogoList>
-            <Img src="/static/img/logos/xd.png" def={[2]} alt="Adobe XD" />
-            <Img src="/static/img/logos/invision.png" def={[2]} alt="Invision" />
-            <Img src="/static/img/logos/sketch.png" def={[2]} alt="Sketch" />
+            <Img src="/static/img/logos/xd.png" definitions={['2x']} alt="Adobe XD" />
+            <Img src="/static/img/logos/invision.png" definitions={['2x']} alt="Invision" />
+            <Img src="/static/img/logos/sketch.png" definitions={['2x']} alt="Sketch" />
           </LogoList>
         </Box>
         <Box width="50%">
           <SmallTitle>CI / CR &amps; Project Management</SmallTitle>
           <LogoList>
-            <Img src="/static/img/logos/github.png" def={[2]} alt="Github" />
-            <Img src="/static/img/logos/gitlab.png" def={[2]} alt="Gitlan" />
-            <Img src="/static/img/logos/jira.png" def={[2]} alt="Atlasian JIRA" />
+            <Img src="/static/img/logos/github.png" definitions={['2x']} alt="Github" />
+            <Img src="/static/img/logos/gitlab.png" definitions={['2x']} alt="Gitlan" />
+            <Img src="/static/img/logos/jira.png" definitions={['2x']} alt="Atlasian JIRA" />
           </LogoList>
         </Box>
       </Row>
