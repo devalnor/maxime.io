@@ -54,7 +54,7 @@ export const Container = styled.div`
 
 export const Quote = styled.div`
   font-family: 'Montreal Regular';
-  max-width:778px;
+  max-width:740px;
   font-size: 45px;
   letter-spacing: -0.031em;
   margin-top: 30px;
