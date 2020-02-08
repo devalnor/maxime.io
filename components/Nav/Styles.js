@@ -14,6 +14,7 @@ export const Style = styled(motion.div).attrs((props) => ({
   width: 100%;
   display: flex;
   justify-content: center;
+  z-index:999;
 `;
 
 export const Container = styled.div`
