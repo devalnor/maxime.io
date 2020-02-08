@@ -14,18 +14,22 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-left: 100px;
-  padding-bottom: 40px;
-  margin-top: 30px;
+  padding-top: 80px;
+  padding-bottom: 80px;
   /* mobile */
   @media (max-width: ${sizes.md}px) {
     align-items: center;
     flex-direction: column;
     padding-left: 0px;
+    padding-top: 40px;
+  padding-bottom: 40px;
   }
 
   /* ipad  */
   @media (max-width: ${sizes.ipad}px) and (min-width: ${sizes.md}px) {
     padding-left: 40px;
+    padding-top: 40px;
+  padding-bottom: 40px;
   }
 `;
 

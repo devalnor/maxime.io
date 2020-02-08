@@ -38,7 +38,7 @@ const Technologies = () => (
           </LogoList>
         </Box>
         <Box width="50%">
-          <SmallTitle>CI / CR &amps; Project Management</SmallTitle>
+          <SmallTitle>CI / CR &amp; Project Management</SmallTitle>
           <LogoList>
             <Img src="/static/img/logos/github.png" alt="Github" title="Github" />
             <Img src="/static/img/logos/gitlab.png" alt="Gitlab" title="Gitlab" />
