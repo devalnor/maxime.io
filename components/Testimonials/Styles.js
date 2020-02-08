@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { colors } from 'shared/utils/theme';
-import { sizes, } from 'shared/utils/responsive';
+import { sizes } from 'shared/utils/responsive';
 
 export const Style = styled.section`
   background: ${colors.blueLightBackground};
@@ -15,6 +15,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-left: 100px;
+  padding-right: 100px;
   padding-bottom: 50px;
   margin-top: 50px;
   /* mobile */
@@ -22,21 +23,22 @@ export const Container = styled.div`
     align-items: center;
     flex-direction: column;
     padding-left: 0px;
+    padding-right: 0px;
     padding-bottom: 20px;
-  margin-top: 20px;
+    margin-top: 20px;
   }
 
   /* ipad  */
   @media (max-width: ${sizes.ipad}px) and (min-width: ${sizes.md}px) {
-    padding-left: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 `;
-
 
 export const Row = styled.div`
   width: 100%;
   display: flex;
- 
+
   /* mobile */
   @media (max-width: ${sizes.md}px) {
     flex-direction: column;
