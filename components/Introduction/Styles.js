@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { colors } from 'shared/utils/theme';
-import { sizes, } from 'shared/utils/responsive';
+import { sizes } from 'shared/utils/responsive';
 
 export const Style = styled.section`
   background-color: ${colors.darkBackground};
@@ -14,24 +14,24 @@ export const Style = styled.section`
 
   /* Desktop */
   @media (min-width: ${sizes.md + 1}px) {
-  background-image: url('../static/img/me.jpg');
-  background-position-x: -430px;
-  background-repeat: no-repeat;
-  background-blend-mode: screen;
-  background-size: contain;
+    background-image: url('../static/img/me.jpg');
+    background-position-x: -430px;
+    background-repeat: no-repeat;
+    background-blend-mode: screen;
+    background-size: contain;
   }
 
   /* Tablet */
   @media (max-width: ${sizes.lg}px) {
     //padding-left: 40px;
-  padding-right: 60px;
+    padding-right: 60px;
   }
 
   /* mobile */
   @media (max-width: ${sizes.md}px) {
-  padding-left: 40px;
-  padding-right: 40px;
-  height: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    height: auto;
   }
 `;
 
@@ -41,10 +41,10 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left:100px;
+  padding-left: 100px;
   /* Tablet */
-   @media (max-width: ${sizes.lg}px) {
-    padding-left:20px;
+  @media (max-width: ${sizes.lg}px) {
+    padding-left: 20px;
   }
   /* mobile */
   @media (max-width: ${sizes.md}px) {
@@ -54,7 +54,7 @@ export const Container = styled.div`
 
 export const Quote = styled.div`
   font-family: 'Montreal Regular';
-  max-width:740px;
+  max-width: 740px;
   font-size: 45px;
   letter-spacing: -0.031em;
   margin-top: 30px;
@@ -62,8 +62,6 @@ export const Quote = styled.div`
   u {
     font-family: inherit;
   }
-
-
 
   /* Tablet */
   @media (max-width: ${sizes.lg}px) {
@@ -78,8 +76,7 @@ export const Quote = styled.div`
   /* Mobile */
   @media (max-width: ${sizes.md}px) {
     font-size: 27px;
-    text-align: center
-
+    text-align: center;
   }
 `;
 
@@ -92,7 +89,7 @@ export const About = styled.div`
   b {
     font-weight: 500;
   }
-  padding-bottom:40px;
+  padding-bottom: 40px;
   /* Mobile */
   @media (max-width: ${sizes.md}px) {
     font-size: 15px;
@@ -100,13 +97,12 @@ export const About = styled.div`
   }
 `;
 
-
 export const AuthorBox = styled.div`
   max-width: 1200px;
   width: 50%;
   display: flex;
   flex-direction: row;
-  
+
   /* mobile */
   @media (max-width: ${sizes.md}px) {
     width: 200px;
@@ -119,8 +115,8 @@ export const FullName = styled.div`
   padding: 10px;
   color: white;
   white-space: nowrap;
-  text-align:center;
- 
+  text-align: center;
+
   /* mobile */
   @media (max-width: ${sizes.md}px) {
     padding: 5px;
@@ -140,14 +136,14 @@ export const Title = styled.div`
 
 export const Photo = styled.div`
   background-color: ${colors.darkBackground};
-  background-image: url('../static/img/me.png');
+  background-image: url('../static/img/me.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-blend-mode: screen;
   background-size: contain;
-  display:block;
+  display: block;
   width: 100%;
   height: 100%;
-  min-height:350px;
-  min-width:350px;
+  min-height: 350px;
+  min-width: 350px;
 `;
