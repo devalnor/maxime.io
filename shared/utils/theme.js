@@ -5,5 +5,6 @@ export const colors = {
   blueLightBackground: '#F0F2FF',
   blueSky: '#BFCDFF',
   blueFlash: '#3865FF',
-  blueDark: '#2C3787'
+  blueAlt: '#5C84F8',
+  blueDark: '#2C3787',
 };
