@@ -5,6 +5,7 @@ import Skills from 'components/Skills';
 import Technologies from 'components/Technologies';
 import Testimonials from 'components/Testimonials';
 import Principles from 'components/Principles';
+import Arguments from 'components/Arguments';
 
 function HomePage() {
   return (
@@ -18,6 +19,8 @@ function HomePage() {
         <Technologies />
         <Testimonials />
         <Principles />
+        <Arguments />
+
       </main>
     </MediaContextProvider>
   );
