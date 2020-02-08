@@ -14,7 +14,7 @@ export const Style = styled.section`
 
   /* Desktop */
   @media (min-width: ${sizes.md + 1}px) {
-  background-image: url('../static/img/me.png');
+  background-image: url('../static/img/me.jpg');
   background-position-x: -430px;
   background-repeat: no-repeat;
   background-blend-mode: screen;
