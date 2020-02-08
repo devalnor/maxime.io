@@ -82,6 +82,7 @@ export const Text = styled.div`
   h1 {
     font-size: 20px;
     margin-bottom: 15px;
+    margin-top:10px;
   }
 
   /* ipad  */
