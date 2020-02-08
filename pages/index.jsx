@@ -1,8 +1,9 @@
 import Introduction from 'components/Introduction';
 import Nav from 'components/Nav';
 import Skills from 'components/Skills';
-import Technologies from 'components/Technologies';
 
+import Technologies from 'components/Technologies';
+import Testimonials from 'components/Testimonials';
 import { MediaContextProvider } from 'shared/utils/responsive';
 
 function HomePage() {
@@ -15,6 +16,8 @@ function HomePage() {
         <Introduction />
         <Skills />
         <Technologies />
+        <Testimonials />
+
       </main>
     </MediaContextProvider>
   );
