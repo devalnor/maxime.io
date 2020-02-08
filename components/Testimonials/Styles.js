@@ -15,8 +15,8 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-left: 100px;
-  padding-bottom: 80px;
-  margin-top: 80px;
+  padding-bottom: 50px;
+  margin-top: 50px;
   /* mobile */
   @media (max-width: ${sizes.md}px) {
     align-items: center;

@@ -4,14 +4,9 @@ import { sizes } from 'shared/utils/responsive';
 
 export const Container = styled.div`
   width: 100%;
-  margin-top: 50px;
+  margin-top: 40px;
   margin-bottom: 50px;
-  margin-right:60px;
-  /* mobile */
-  @media (max-width: ${sizes.md}px) {
-    xpadding-left: 50px;
-    xpadding-right: 50px;
-  }
+  margin-right: 60px;
 `;
 
 export const Box = styled.div`
@@ -80,7 +75,7 @@ export const PeopleBox = styled(Box)`
   align-items: center;
 
   @media (max-width: ${sizes.ipad}px) and (min-width: ${sizes.md}px) {
-    flex-direction:column;
+    flex-direction: column;
   }
 `;
 
@@ -88,14 +83,14 @@ export const FullName = styled.div`
   margin-bottom: 20px;
   font-size: 14px;
   @media (max-width: ${sizes.ipad}px) and (min-width: ${sizes.md}px) {
-  text-align: center;
+    text-align: center;
   }
 `;
 
 export const Title = styled.div`
   font-size: 14px;
   @media (max-width: ${sizes.ipad}px) and (min-width: ${sizes.md}px) {
-  text-align: center;
+    text-align: center;
   }
 `;
 
@@ -103,7 +98,7 @@ export const Company = styled.div`
   font-weight: bold;
   font-size: 14px;
   @media (max-width: ${sizes.ipad}px) and (min-width: ${sizes.md}px) {
-  text-align: center;
+    text-align: center;
   }
 `;
 
