@@ -6,6 +6,8 @@ import Technologies from 'components/Technologies';
 import Testimonials from 'components/Testimonials';
 import Principles from 'components/Principles';
 import Arguments from 'components/Arguments';
+import Customers from 'components/Customers';
+import GetInTouch from 'components/GetInTouch';
 
 function HomePage() {
   return (
@@ -20,7 +22,7 @@ function HomePage() {
         <Testimonials />
         <Principles />
         <Arguments />
-
+        <Customers />
       </main>
     </MediaContextProvider>
   );
