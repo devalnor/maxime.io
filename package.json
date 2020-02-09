@@ -12,11 +12,13 @@
   "dependencies": {
     "@artsy/fresnel": "^1.0.13",
     "framer-motion": "^1.8.4",
+    "lodash.isequal": "^4.5.0",
     "next": "^9.2.1",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "styled-components": "^5.0.0",
+    "swipe-js-iso": "^2.1.5",
     "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
