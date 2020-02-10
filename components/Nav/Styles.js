@@ -48,6 +48,7 @@ export const Menu = styled.div`
 `;
 
 export const Button = styled.div`
+  cursor: pointer;
   background-color: ${colors.blueFlash};
   display: flex;
   white-space: nowrap;
@@ -63,6 +64,9 @@ export const Button = styled.div`
 `;
 
 export const LinkedIn = styled(LinkedInLogo)`
+ cursor: pointer;
 margin-left:16px;
-width:37px;
+width:50px;
+margin-top:4px;
+padding-right:16px;
 `;
