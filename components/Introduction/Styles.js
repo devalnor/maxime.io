@@ -17,13 +17,11 @@ export const Style = styled.section`
     background-image: url('../static/img/me.jpg');
     background-position-x: -430px;
     background-repeat: no-repeat;
-    background-blend-mode: screen;
     background-size: contain;
   }
 
   /* Tablet */
   @media (max-width: ${sizes.lg}px) {
-    //padding-left: 40px;
     padding-right: 60px;
   }
 
@@ -44,7 +42,7 @@ export const Container = styled.div`
   padding-left: 100px;
   /* Tablet */
   @media (max-width: ${sizes.lg}px) {
-    padding-left: 20px;
+    padding-left: 0px;
   }
   /* mobile */
   @media (max-width: ${sizes.md}px) {
@@ -139,7 +137,6 @@ export const Photo = styled.div`
   background-image: url('../static/img/me.jpg');
   background-repeat: no-repeat;
   background-position: center;
-  background-blend-mode: screen;
   background-size: contain;
   display: block;
   width: 100%;
