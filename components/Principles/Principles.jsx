@@ -28,10 +28,10 @@ const Principles = () => (
           <Emoji label="Kiss">💋</Emoji>
         </Icon>
         <Text>
-          <h1>Keep It Stupid Simple</h1>
-          Said Kelly Johnson aircraft engineer of the famous us aircraft SR-71
+          <h1>Keep It Stupid Simple (KISS)</h1>
+          From Kelly Johnson aircraft engineer of the famous us aircraft SR-71
           Blackbird. Most solutions work best if they are kept simple rather
-          than made complicated. Since then, all good software developper know
+          than made complicated. Since then, all software developper know
           for good reason the KISS acronym.
         </Text>
       </Row>
@@ -41,9 +41,9 @@ const Principles = () => (
         </Icon>
         <Text>
           <h1>Watch out the bullshits</h1>
-          Nobody is perfect, so always be honest to acknowledge when you made
-          bullshit. Is this principle already another bullshit ? I’ll let you
-          judge by yourself ;-)
+          Nobody is perfect, always be honest to acknowledge when you made
+          bullshit. Is this third principle another one? I’ll let you
+          judge by yourself ;)
         </Text>
       </Row>
     </Container>
