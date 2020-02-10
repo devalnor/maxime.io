@@ -8,31 +8,14 @@ class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
-
-    let serverInfo = { host: '', protocol: '' };
-    if (ctx.req || false) {
-      serverInfo = {
-        protocol: ctx.req.connection.encrypted || false ? 'https' : 'http',
-        host: ctx.req.headers.host
-      };
-      // Force https in production env.
-      // Because on now.sh ctx.req.connection.encrypted is not present event in https
-      if ((process.env || false) && process.env.NODE_ENV === 'production') {
-        serverInfo.protocol = 'https';
-      }
-      serverInfo.rootUrl = `${serverInfo.protocol}://${serverInfo.host}`;
-    }
-
     try {
       ctx.renderPage = () => originalRenderPage({
         // eslint-disable-next-line react/jsx-props-no-spreading
         enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />)
       });
       const initialProps = await Document.getInitialProps(ctx);
-
       return {
         ...initialProps,
-        serverInfo,
         styles: (
           <>
             {initialProps.styles}
@@ -46,7 +29,6 @@ class MyDocument extends Document {
   }
 
   render() {
-    const { serverInfo } = this.props;
     return (
       <Html>
         <Head>
@@ -61,10 +43,6 @@ class MyDocument extends Document {
           <meta
             property="og:description"
             content="Developing innovative solutions that bring Customer Experience to your business goals is a passion."
-          />
-          <meta
-            property="og:image"
-            content={`${serverInfo.rootUrl}/static/img/me.jpg`}
           />
           <style
             type="text/css"
