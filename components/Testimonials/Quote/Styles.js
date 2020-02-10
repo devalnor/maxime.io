@@ -107,11 +107,6 @@ export const ProfilePicture = styled.div`
   margin-left: 30px;
   margin-right: 30px;
 
-  /* ipad  */
-  @media (max-width: ${sizes.ipad}px) and (min-width: ${sizes.md}px) {
-    //margin-left: 0px;
-  }
-
   /* mobile */
   @media (max-width: ${sizes.md}px) {
     padding-left: 20px;
