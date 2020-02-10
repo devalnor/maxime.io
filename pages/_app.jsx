@@ -1,54 +1,15 @@
-/* eslint-disable react/jsx-props-no-spreading */
-import App from 'next/app';
-import Head from 'next/head';
-import React from 'react';
-import { withRouter } from 'next/router';
 // Fonts & Style
 import 'typeface-montserrat';
 import '../styles.css';
+import PropTypes from 'prop-types';
 
-class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
-    let serverInfo = { host: '', protocol: '' };
-    if (ctx.req || false) {
-      serverInfo = {
-        protocol: ctx.req.connection.encrypted || false ? 'https' : 'http',
-        host: ctx.req.headers.host
-      };
-      // Force https in production env.
-      // Because on now.sh ctx.req.connection.encrypted is not present event in https
-      if ((process.env || false) && process.env.NODE_ENV === 'production') {
-        serverInfo.protocol = 'https';
-      }
-      serverInfo.rootUrl = `${serverInfo.protocol}://${serverInfo.host}`;
-    }
+// eslint-disable-next-line react/jsx-props-no-spreading
+const MyApp = ({ Component, pageProps }) => <Component {...pageProps} />;
 
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
+MyApp.propTypes = {
+  Component: PropTypes.elementType.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  pageProps: PropTypes.object.isRequired
+};
 
-    return { pageProps, serverInfo };
-  }
-
-  render() {
-    const { Component, pageProps, serverInfo } = this.props;
-    return (
-      <>
-        <Head>
-          <title>
-            Maxime de Visscher |{serverInfo.rootUrl} Technology Expert &amp;
-            Digital Consultant
-          </title>
-          <meta
-            property="og:image"
-            content={`${serverInfo.rootUrl}/static/img/me.jpg`}
-          />
-        </Head>
-        <Component {...pageProps} />
-      </>
-    );
-  }
-}
-
-export default withRouter(MyApp);
+export default MyApp;
