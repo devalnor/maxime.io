@@ -119,7 +119,10 @@ ReactSwipe.propTypes = {
   className: PropTypes.string,
   childCount: PropTypes.number,
   enabled: PropTypes.bool,
-  children: PropTypes.string.isRequired
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired
 };
 
 ReactSwipe.defaultProps = {
