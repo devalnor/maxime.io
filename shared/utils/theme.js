@@ -2,7 +2,7 @@
 export const colors = {
   darkBackground: '#000121',
   lightBackground: '#fff',
-  blueLightBackground: '#F0F2FF',
+  blueLightBackground: '#f4f7fc',
   blueSky: '#BFCDFF',
   blueFlash: '#3865FF',
   blueAlt: '#5C84F8',
