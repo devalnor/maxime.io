@@ -4,7 +4,7 @@ import Document, {
 import { ServerStyleSheet } from 'styled-components';
 import { mediaStyles } from 'shared/utils/responsive';
 
-export default class MyDocument extends Document {
+class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
@@ -14,7 +14,6 @@ export default class MyDocument extends Document {
         enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />)
       });
       const initialProps = await Document.getInitialProps(ctx);
-
       return {
         ...initialProps,
         styles: (
@@ -33,13 +32,9 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <title>
-            Maxime de Visscher - Technology Expert &amp; Digital Consultant
-          </title>
           <meta
             name="description"
-            c
-            ontent="I’m an experienced digital consultant with a broad skill set and deep understanding of the interplay between business, design and technology. Over the last decade, I helped customers crafting solution that meet the holy grail of memorable user experiences in their digital ecosystem."
+            content="I’m an experienced digital consultant with a broad skill set and deep understanding of the interplay between business, design and technology. Over the last decade, I helped customers crafting solution that meet the holy grail of memorable user experiences in their digital ecosystem."
           />
           <meta
             property="og:title"
@@ -54,7 +49,6 @@ export default class MyDocument extends Document {
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: mediaStyles }}
           />
-          <meta property="og:image" content="/static/img/me.jpg" />
         </Head>
         <body>
           <Main />
@@ -64,3 +58,5 @@ export default class MyDocument extends Document {
     );
   }
 }
+
+export default MyDocument;
