@@ -1,4 +1,3 @@
-import { Media } from 'shared/utils/responsive';
 import {
   Style,
   Container,
