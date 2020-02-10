@@ -89,7 +89,7 @@ const Customers = () => {
             <Sector>
               <b>Institution, Education and Associations</b>
               <ul>
-                <li>Belgium's Chancellery of the Prime Minister</li>
+                <li>Belgium&apos;s Chancellery of the Prime Minister</li>
                 <li>CLL</li>
                 <li>Education Above All Fundation</li>
                 <li>European Parliament</li>
@@ -109,7 +109,6 @@ const Customers = () => {
               <b>Publishing</b>
               <ul>
                 <li>Casterman</li>
-                <li>Emakina</li>
                 <li>Dargaud</li>
                 <li>Dupuis</li>
                 <li>Editions Delagrave</li>
