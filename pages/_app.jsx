@@ -8,42 +8,15 @@ import 'typeface-montserrat';
 import '../styles.css';
 
 class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {};
-    let serverInfo = { host: '', protocol: '' };
-    if (ctx.req || false) {
-      serverInfo = {
-        protocol: ctx.req.connection.encrypted || false ? 'https' : 'http',
-        host: ctx.req.headers.host
-      };
-      // Force https in production env.
-      // Because on now.sh ctx.req.connection.encrypted is not present event in https
-      if ((process.env || false) && process.env.NODE_ENV === 'production') {
-        serverInfo.protocol = 'https';
-      }
-      serverInfo.rootUrl = `${serverInfo.protocol}://${serverInfo.host}`;
-    }
-
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx);
-    }
-
-    return { pageProps, serverInfo };
-  }
-
   render() {
-    const { Component, pageProps, serverInfo } = this.props;
+    const { Component, pageProps } = this.props;
     return (
       <>
         <Head>
           <title>
-            Maxime de Visscher |{serverInfo.rootUrl} Technology Expert &amp;
+            Maxime de Visscher | Technology Expert &amp; Digital Consultant
             Digital Consultant
           </title>
-          <meta
-            property="og:image"
-            content={`${serverInfo.rootUrl}/static/img/me.jpg`}
-          />
         </Head>
         <Component {...pageProps} />
       </>
