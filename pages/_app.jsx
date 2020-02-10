@@ -16,6 +16,11 @@ class MyApp extends App {
         protocol: ctx.req.connection.encrypted || false ? 'https' : 'http',
         host: ctx.req.headers.host
       };
+      // Force https in production env.
+      // Because on now.sh ctx.req.connection.encrypted is not present event in https
+      if ((process.env || false) && process.env.NODE_ENV === 'production') {
+        serverInfo.protocol = 'https';
+      }
       serverInfo.rootUrl = `${serverInfo.protocol}://${serverInfo.host}`;
     }
 
@@ -28,7 +33,6 @@ class MyApp extends App {
 
   render() {
     const { Component, pageProps, serverInfo } = this.props;
-
     return (
       <>
         <Head>
@@ -36,7 +40,10 @@ class MyApp extends App {
             Maxime de Visscher |{serverInfo.rootUrl} Technology Expert &amp;
             Digital Consultant
           </title>
-          <meta property="og:image" content={`${serverInfo.rootUrl}/static/img/me.jpg`} />
+          <meta
+            property="og:image"
+            content={`${serverInfo.rootUrl}/static/img/me.jpg`}
+          />
         </Head>
         <Component {...pageProps} />
       </>
