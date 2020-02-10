@@ -84,6 +84,7 @@ export const About = styled.div`
   font-size: 21px;
   font-weight: 200;
   line-height: 40px;
+
   b {
     font-weight: 500;
   }
