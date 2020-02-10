@@ -7,7 +7,7 @@ export const Style = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: ${colors.blueSky};
   flex-direction: column;
   min-height: 400px;
 `;
@@ -71,6 +71,7 @@ export const Content = styled.div`
     font-size: 16px;
     line-height: 30px;
     padding-right: 0px;
+    text-align:center
   }
 
   p {
@@ -79,6 +80,19 @@ export const Content = styled.div`
   a {
     color: white;
     font-weight: 400;
+    text-decoration: none;
+    background-color: ${colors.blueFlash};
+    padding: 10px;
+    color: white;
+    padding: 20px;
+    padding-left:70px;
+      padding-right:70px;   
+    /* mobile */
+    @media (max-width: ${sizes.md}px) {
+      text-align: center;
+      font-weight: 500;
+
+    }
   }
 `;
 

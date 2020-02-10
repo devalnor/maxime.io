@@ -19,14 +19,10 @@ const GetInTouch = () => (
       <Content>
         <Title>Get In Touch!</Title>
         <p>
-          I’m happy to talk business or simply give you some free advice. If
-          both sides see value in working together, we’ll move forward. If not,
-          that’s okay too. Worst case we both had a nice chat and received some
-          free feedback.
+          I&apos;ll be happy to talk business with you!
         </p>
-        <p>
-          Send me an email at <Obfuscate email="maxime@macoal.com" />
-        </p>
+        <Obfuscate email="maxime@macoal.com">Send me an mail</Obfuscate>
+
       </Content>
     </Container>
   </Style>
