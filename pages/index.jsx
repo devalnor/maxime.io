@@ -8,6 +8,7 @@ import Principles from 'components/Principles';
 import Arguments from 'components/Arguments';
 import Customers from 'components/Customers';
 import GetInTouch from 'components/GetInTouch';
+import Footer from 'components/Footer';
 
 function HomePage() {
   return (
@@ -25,6 +26,9 @@ function HomePage() {
         <Customers />
         <GetInTouch />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </MediaContextProvider>
   );
 }
