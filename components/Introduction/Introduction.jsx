@@ -1,15 +1,19 @@
 import { Media } from 'shared/utils/responsive';
 import {
-  Style, Container, Photo, Title, FullName, AuthorBox, Quote, About
+  Style,
+  Container,
+  Photo,
+  Title,
+  FullName,
+  AuthorBox,
+  Quote,
+  About
 } from './Styles';
-
 
 const Introduction = () => (
   <Style>
+    <Photo />
     <Container>
-      <Media at="sm">
-        <Photo />
-      </Media>
       <AuthorBox>
         <FullName>Maxime de Visscher</FullName>
         <Title>
@@ -18,8 +22,8 @@ const Introduction = () => (
       </AuthorBox>
 
       <Quote>
-        Developing innovative solutions that bring Customer Experience to your business
-        goals <u>is a passion</u>.
+        Developing innovative solutions that bring Customer Experience to your
+        business goals <u>is a passion</u>.
       </Quote>
       <About>
         I’m an experienced digital consultant with a broad skill set and deep
@@ -30,7 +34,6 @@ const Introduction = () => (
       </About>
     </Container>
   </Style>
-
 );
 
 export default Introduction;

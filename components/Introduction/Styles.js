@@ -12,17 +12,9 @@ export const Style = styled.section`
   padding-left: 200px;
   padding-right: 200px;
 
-  /* Desktop */
-  @media (min-width: ${sizes.md + 1}px) {
-    background-image: url('../static/img/me.jpg');
-    background-position-x: -430px;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-
   /* Tablet */
   @media (max-width: ${sizes.lg}px) {
-    padding-right: 60px;
+    padding-right: 90px;
   }
 
   /* mobile */
@@ -30,6 +22,7 @@ export const Style = styled.section`
     padding-left: 40px;
     padding-right: 40px;
     height: auto;
+    flex-direction: column;
   }
 `;
 
@@ -40,6 +33,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   padding-left: 100px;
+  z-index: 10;
   /* Tablet */
   @media (max-width: ${sizes.lg}px) {
     padding-left: 0px;
@@ -134,14 +128,50 @@ export const Title = styled.div`
 `;
 
 export const Photo = styled.div`
+  @keyframes blurAnimation {
+    0% {
+      filter: blur(1.5rem);
+      opacity: 0.5;
+    }
+    100% {
+      filter: blur(0rem);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
   background-color: ${colors.darkBackground};
   background-image: url('../static/img/me.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  display: block;
-  width: 100%;
-  height: 100%;
-  min-height: 350px;
-  min-width: 350px;
+
+  /* Desktop */
+  @media (min-width: ${sizes.md + 1}px) {
+    top: 0;
+    left: 0;
+    max-height: 800px;
+    width: 100%;
+    height: 800px;
+    position: absolute;
+    background-position-x: -430px;
+    animation: 1s ease-out 0s 1 blurAnimation;
+  }
+  /* mobile */
+  @media (max-width: ${sizes.md}px) {
+    display: block;
+    min-height: 350px;
+    min-width: 250px;
+    animation: 1s ease-out 0s 1 blurAnimation;
+  }
 `;
