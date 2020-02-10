@@ -151,7 +151,7 @@ export const Photo = styled.div`
   }
 
   background-color: ${colors.darkBackground};
-  background-image: url('../static/img/me.jpg');
+  background-image: url('/static/img/me.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
