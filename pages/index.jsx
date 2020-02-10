@@ -23,6 +23,7 @@ function HomePage() {
         <Principles />
         <Arguments />
         <Customers />
+        <GetInTouch />
       </main>
     </MediaContextProvider>
   );
