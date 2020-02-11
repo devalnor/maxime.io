@@ -33,9 +33,6 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <title>
-            Maxime de Visscher - Technology Expert &amp; Digital Consultant
-          </title>
           <meta
             name="description"
             c

@@ -1,15 +1,36 @@
+import App from 'next/app';
+import Head from 'next/head';
+import PropTypes from 'prop-types';
+
+
 // Fonts & Style
 import 'typeface-montserrat';
 import '../styles.css';
-import PropTypes from 'prop-types';
 
-// eslint-disable-next-line react/jsx-props-no-spreading
-const MyApp = ({ Component, pageProps }) => <Component {...pageProps} />;
+
+class MyApp extends App {
+  render() {
+    const { Component, pageProps, } = this.props;
+    return (
+      <>
+        <Head>
+          <title>
+            Maxime de Visscher | Technology Expert &amp; Digital Consultant
+          </title>
+        </Head>
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        <Component {...pageProps} />
+      </>
+    );
+  }
+}
+
 
 MyApp.propTypes = {
   Component: PropTypes.elementType.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   pageProps: PropTypes.object.isRequired
 };
+
 
 export default MyApp;
