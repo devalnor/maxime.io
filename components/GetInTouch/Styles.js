@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { colors } from 'shared/utils/theme';
 import { sizes } from 'shared/utils/responsive';
 import { motion } from 'framer-motion';
+import GithubLogo from 'public/static/img/logos/github.svg';
+import LinkedInLogo from 'public/static/img/logos/linkedIn.svg';
 
 export const Style = styled.section`
   background: ${colors.darkBackground};
@@ -24,6 +26,7 @@ export const Container = styled.div`
   padding-top: 60px;
   padding-bottom: 10px;
   padding-left: 100px;
+  padding-right: 100px;
   /* ipad  */
   @media (max-width: ${sizes.ipad}px) and (min-width: ${sizes.md}px) {
     padding-left: 20px;
@@ -47,7 +50,8 @@ export const Row = styled.div`
 `;
 
 export const Profile = styled.div`
-  width: 33%;
+  width: 25%;
+  min-width: 25%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,48 +63,71 @@ export const Profile = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 67%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
   letter-spacing: -0.022em;
-  max-width: 778px;
   font-size: 21px;
   font-weight: 200;
   line-height: 40px;
-  padding-right: 60px;
+  padding-left: 20px;
+  /* ipad  */
+  @media (max-width: ${sizes.ipad}px) and (min-width: ${sizes.md}px) {
+    padding-left: 10px;
+  }
+
   /* mobile */
   @media (max-width: ${sizes.md}px) {
     width: 100%;
     font-size: 16px;
     line-height: 30px;
     padding-right: 0px;
-    text-align:center
+    text-align: center;
+    padding-left: 0px;
   }
 
   p {
     padding-bottom: 30px;
   }
-  a {
-    color: white;
-    font-weight: 400;
-    text-decoration: none;
-    background-color: ${colors.blueFlash};
-    padding: 10px;
-    color: white;
-    padding: 20px;
-    padding-left:70px;
-      padding-right:70px;   
-    /* mobile */
-    @media (max-width: ${sizes.md}px) {
-      text-align: center;
-      font-weight: 500;
-
-    }
-  }
 `;
 
 export const Button = styled(motion.div)`
   transform-origin: center;
-  background-color: red;
-  position: absolute;
+  position: relative;
+  background-color: ${colors.blueFlash};
+  text-align: center;
+  width: 50%;
+
+  /* ipad  */
+  @media (max-width: ${sizes.ipad}px) and (min-width: ${sizes.md}px) {
+    width: 66%;
+  }
+
+  /* mobile */
+  @media (max-width: ${sizes.md}px) {
+    width: 100%;
+  }
+
+  a {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    color: white;
+    font-weight: 400;
+    text-decoration: none;
+    color: white;
+    /* mobile */
+    @media (max-width: ${sizes.md}px) {
+      width: 100%;
+      text-align: center;
+      font-weight: 500;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      font-size: 18px;
+    }
+  }
 `;
 
 Button.defaultProps = {
@@ -135,11 +162,44 @@ export const Photo = styled.div`
   height: 250px;
   max-height: 250px;
   max-width: 250px;
-  margin: 20px;
 
   /* mobile */
   @media (max-width: ${sizes.md}px) {
     width: 250px;
     height: 250px;
+  }
+`;
+
+export const LinkedIn = styled(LinkedInLogo)`
+  cursor: pointer;
+  margin-left: 16px;
+  width: 60px;
+  margin-top: 4px;
+  padding-right: 16px;
+`;
+
+export const Github = styled(GithubLogo)`
+  cursor: pointer;
+  margin-left: 16px;
+  width: 60px;
+  margin-top: 4px;
+  padding-right: 16px;
+`;
+
+export const Logos = styled.div`
+  display: flex;
+  width: 50%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+
+  /* ipad  */
+  @media (max-width: ${sizes.ipad}px) and (min-width: ${sizes.md}px) {
+    width: 66%;
+  }
+  /* mobile */
+  @media (max-width: ${sizes.md}px) {
+    width: 100%;
   }
 `;

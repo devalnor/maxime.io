@@ -3,7 +3,16 @@ import { useInView } from 'react-intersection-observer';
 import Img from 'shared/components/Img';
 import Obfuscate from 'react-obfuscate';
 import {
-  Style, Container, Profile, Content, Title, Photo, Button
+  Style,
+  Container,
+  Profile,
+  Content,
+  Title,
+  Photo,
+  Button,
+  Logos,
+  LinkedIn,
+  Github
 } from './Styles';
 
 const GetInTouch = () => {
@@ -22,22 +31,33 @@ const GetInTouch = () => {
       <Container>
         <Profile>
           <Photo />
-          <Img
-            src="/static/img/labels.png"
-            alt="Labels"
-            title="Serious Joke!"
-            width="150px"
-          />
         </Profile>
         <Content>
-          <Title>Get In Touch!</Title>
-          <p>
-            I&apos;ll be happy to talk business with you!
-          </p>
 
+          <Title>Get In Touch!</Title>
+          <p>I&apos;ll be happy to talk business with you!</p>
           <Button>
             <Obfuscate email="maxime@macoal.com">Send me an mail</Obfuscate>
           </Button>
+          <Logos>
+            <a
+              href="https://github.com/devalnor"
+              target="_blank"
+              label="Github"
+              rel="noopener noreferrer"
+            >
+              <Github />
+            </a>
+            <a
+              href="https://be.linkedin.com/in/maximedevisscher"
+              target="_blank"
+              label="LinkedIn"
+              rel="noopener noreferrer"
+            >
+              <LinkedIn />
+            </a>
+          </Logos>
+
         </Content>
       </Container>
     </Style>
