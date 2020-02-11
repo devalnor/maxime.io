@@ -50,7 +50,7 @@ const Principles = () => {
             <Emoji label="Hourglass">⏳</Emoji>
           </Icon>
           <Text>
-            <h1>A self-managing collaborator who won’t wast your time</h1>
+            <h1>A self-managing collaborator who won’t waste your time</h1>
             I’ve worked as an independent freelance since the beginning of my
             career and I don’t need constant hand-holding in order to be
             productive. I know when to make decisions independently and when to
