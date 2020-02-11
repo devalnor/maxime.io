@@ -9,7 +9,7 @@ export const Style = styled.section`
   justify-content: center;
 `;
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   max-width: 1200px;
   width: 100%;
   display: flex;
@@ -22,7 +22,20 @@ export const Container = styled.div`
   }
 `;
 
-export const Box = styled.div`
+// Motion Framer Default Variants
+Container.defaultProps = {
+  initial: 'hidden',
+  variants: {
+    showed: {
+      transition: { staggerChildren: 0.25, delayChildren: 0 }
+    },
+    hidden: {
+      transition: { staggerChildren: 0.05, staggerDirection: -1 }
+    }
+  }
+};
+
+export const Box = styled(motion.div)`
   width: ${(props) => props.width || '33%'};
   flex-direction: column;
   align-items: center;
@@ -31,6 +44,23 @@ export const Box = styled.div`
     width: 100%;
   }
 `;
+
+// Motion Framer Default Variants
+Box.defaultProps = {
+  transition: {
+    duration: 0.5,
+    type: 'tween',
+    staggerChildren: 0,
+    delayChildren: 1
+  },
+  variants: {
+    showed: {
+      opacity: 1,
+      y: 0
+    },
+    hidden: { opacity: 0, y: '-40px' }
+  }
+};
 
 export const BoxElem = styled.div`
   display: flex;
@@ -86,14 +116,40 @@ export const SkillItem = styled(motion.li)`
   line-height: 42px;
 `;
 
-export const HorizLine = styled.div`
+export const HorizLine = styled(motion.div)`
   height: ${(props) => props.size || '1px'};
   width: ${(props) => props.width || '100%'};
   background-color: ${colors.blueSky};
 `;
 
-export const VertLine = styled.div`
+// Motion Framer Default Variants
+HorizLine.defaultProps = {
+  initial: 'hidden',
+  transition: { duration: 0.2 },
+  variants: {
+    showed: {
+      opacity: 1,
+      scale: 1
+    },
+    hidden: { opacity: 1, scale: 0 }
+  }
+};
+
+export const VertLine = styled(motion.div)`
   width: ${(props) => props.size || '1px'};
   height: ${(props) => props.height || '100%'};
   background-color: ${colors.blueSky};
 `;
+
+// Motion Framer Default Variants
+VertLine.defaultProps = {
+  initial: 'hidden',
+  transition: { duration: 1 },
+  variants: {
+    showed: {
+      opacity: 1,
+      scale: 1
+    },
+    hidden: { opacity: 1, scale: 0 }
+  }
+};

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { sizes } from 'shared/utils/responsive';
 import { colors } from 'shared/utils/theme';
+import { motion } from 'framer-motion';
 
 export const Style = styled.section`
   background: ${colors.blueLightBackground};
@@ -8,7 +9,7 @@ export const Style = styled.section`
   justify-content: center;
 `;
 
-export const Container = styled.div`
+export const Container = styled(motion.div)`
   max-width: 1200px;
   width: 100%;
   display: flex;
@@ -32,6 +33,20 @@ export const Container = styled.div`
   }
 `;
 
+
+// Motion Framer Default Variants
+Container.defaultProps = {
+  variants: {
+    showed: {
+      transition: { staggerChildren: 0.05, delayChildren: 0 }
+    },
+    hidden: {
+      transition: { staggerChildren: 0.05, staggerDirection: -1 }
+    }
+  }
+};
+
+
 export const Title = styled.div`
   font-family: 'Montreal Regular';
   font-size: 38px;
@@ -46,7 +61,7 @@ export const Title = styled.div`
   }
 `;
 
-export const Row = styled.div`
+export const Row = styled(motion.div)`
   width: 100%;
   display: flex;
 
@@ -55,6 +70,17 @@ export const Row = styled.div`
     flex-direction: column;
   }
 `;
+
+// Motion Framer Default Variants
+Row.defaultProps = {
+  initial: 'hidden',
+  transition: { duration: 1 },
+  variants: {
+    showed: { opacity: 1 },
+    hidden: { opacity: 0 }
+  }
+};
+
 
 export const Icon = styled.div`
   width: 50px;

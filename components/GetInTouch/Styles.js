@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { colors } from 'shared/utils/theme';
 import { sizes } from 'shared/utils/responsive';
+import { motion } from 'framer-motion';
 
 export const Style = styled.section`
   background: ${colors.darkBackground};
@@ -95,6 +96,17 @@ export const Content = styled.div`
     }
   }
 `;
+
+export const Button = styled(motion.div)`
+  transform-origin: center;
+  background-color: red;
+  position: absolute;
+`;
+
+Button.defaultProps = {
+  whileHover: { scale: 1.1 },
+  whileTap: { scale: 0.95 }
+};
 
 export const Title = styled.div`
   font-family: 'Montreal Regular';
