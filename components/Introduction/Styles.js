@@ -139,17 +139,6 @@ export const Photo = styled.div`
     }
   }
 
-  @keyframes slideInFromLeft {
-    0% {
-      transform: translateX(-100%);
-      opacity: 0.5;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
   background-color: ${colors.darkBackground};
   background-image: url('/static/img/me.jpg');
   background-repeat: no-repeat;
@@ -165,7 +154,7 @@ export const Photo = styled.div`
     height: 800px;
     position: absolute;
     background-position-x: -430px;
-    animation: 1s ease-out 0s 1 blurAnimation;
+    animation: 1.3s ease-out 0s 1 blurAnimation;
   }
   /* mobile */
   @media (max-width: ${sizes.md}px) {
