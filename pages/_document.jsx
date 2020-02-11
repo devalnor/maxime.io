@@ -51,7 +51,10 @@ export default class MyDocument extends Document {
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: mediaStyles }}
           />
-          <meta property="og:image" content="https://maxime.io/static/img/me.jpg" />
+          <meta
+            property="og:image"
+            content="https://maxime.io/static/img/me.jpg"
+          />
         </Head>
         <body>
           <Main />
