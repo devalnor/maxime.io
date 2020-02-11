@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import App from 'next/app';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
@@ -18,7 +19,6 @@ class MyApp extends App {
             Maxime de Visscher | Technology Expert &amp; Digital Consultant
           </title>
         </Head>
-        // eslint-disable-next-line react/jsx-props-no-spreading
         <Component {...pageProps} />
       </>
     );
