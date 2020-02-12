@@ -102,16 +102,33 @@ const TechnologySvg = ({ animate }) => (
       <path
         id="Rectangle_2969"
         data-name="Rectangle 2969"
-        className="techno_cls-5 qGdQyLFO_4"
+        className="techno_cls-5 qGdQyLFO_4 blink"
         width="13"
         height="26"
-        transform="translate(1062 2541)"
+        transform="translate(1012 2539)"
         d="M0 0 L13 0 L13 26 L0 26 Z"
       />
     </g>
     <style data-made-with="vivus-instant">
+      {`
+      .start .blink {
+          background-color:red;
+        animation: blink-animation 1s steps(2, start) infinite;
+        -webkit-animation: blink-animation 1s steps(2, start) infinite;
+      }
+      @keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+      @-webkit-keyframes blink-animation {
+        to {
+          visibility: hidden;
+        }
+      }
+      `}
       {
-        '.qGdQyLFO_0{stroke-dasharray:722 724;stroke-dashoffset:723;}.start .qGdQyLFO_0{animation:qGdQyLFO_draw 1000ms ease 0ms forwards;}.qGdQyLFO_1{stroke-dasharray:718 720;stroke-dashoffset:719;}.start .qGdQyLFO_1{animation:qGdQyLFO_draw 1000ms ease 500ms forwards;}.qGdQyLFO_2{stroke-dasharray:650 652;stroke-dashoffset:651;}.start .qGdQyLFO_2{animation:qGdQyLFO_draw 1000ms ease 1000ms forwards;}.qGdQyLFO_3{stroke-dasharray:646 648;stroke-dashoffset:647;}.start .qGdQyLFO_3{animation:qGdQyLFO_draw 1000ms ease 1500ms forwards;}.qGdQyLFO_4{stroke-dasharray:78 80;stroke-dashoffset:79;}.start .qGdQyLFO_4{animation:qGdQyLFO_draw 1000ms ease 2000ms forwards;}@keyframes qGdQyLFO_draw{100%{stroke-dashoffset:0;}}@keyframes qGdQyLFO_fade{0%{stroke-opacity:1;}94.44444444444444%{stroke-opacity:1;}100%{stroke-opacity:0;}}'
+        '.qGdQyLFO_0{stroke-dasharray:722 724;stroke-dashoffset:723;}.start .qGdQyLFO_0{animation:qGdQyLFO_draw 1000ms ease 0ms forwards;}.qGdQyLFO_1{stroke-dasharray:718 720;stroke-dashoffset:719;}.start .qGdQyLFO_1{animation:qGdQyLFO_draw 1000ms ease 500ms forwards;}.qGdQyLFO_2{stroke-dasharray:650 652;stroke-dashoffset:651;}.start .qGdQyLFO_2{animation:qGdQyLFO_draw 1000ms ease 1000ms forwards;}.qGdQyLFO_3{stroke-dasharray:646 648;stroke-dashoffset:647;}.start .qGdQyLFO_3{animation:qGdQyLFO_draw 1000ms ease 1500ms forwards;}.qGdQyLFO_4{}.start .qGdQyLFO_4{}@keyframes qGdQyLFO_draw{100%{stroke-dashoffset:0;}}@keyframes qGdQyLFO_fade{0%{stroke-opacity:1;}94.44444444444444%{stroke-opacity:1;}100%{stroke-opacity:0;}}'
       }
     </style>
   </svg>
