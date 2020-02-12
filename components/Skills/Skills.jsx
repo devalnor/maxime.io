@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useInView } from 'react-intersection-observer';
+import { useInView, InView } from 'react-intersection-observer';
 import { Media } from 'shared/utils/responsive';
 import BusinessSVG from './assets/BusinessSvg';
 import DesignSvg from './assets/DesignSvg';
@@ -20,18 +20,18 @@ import {
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [ref, inView] = useInView({
+  const [sectionRef, sectionInView] = useInView({
     threshold: 0.2
   });
 
   useEffect(() => {
-    if (inView && !isVisible) {
+    if (sectionInView && !isVisible) {
       setIsVisible(true);
     }
-  }, [inView]);
+  }, [sectionInView]);
   return (
     <Style>
-      <Container ref={ref} animate={isVisible ? 'showed' : 'hidden'}>
+      <Container ref={sectionRef} animate={isVisible ? 'showed' : 'hidden'}>
         <Box>
           <Media greaterThan="sm">
             <BoxElem height="50px" />
@@ -44,9 +44,13 @@ const Skills = () => {
           </BoxElem>
           <Title>Business</Title>
           <BoxElem>
-            <IconContainer>
-              <BusinessSVG />
-            </IconContainer>
+            <InView threshold="0.5">
+              {({ inView, ref }) => (
+                <IconContainer ref={ref}>
+                  <BusinessSVG animate={inView} />
+                </IconContainer>
+              )}
+            </InView>
           </BoxElem>
 
           <BoxElem>
@@ -73,9 +77,13 @@ const Skills = () => {
           </BoxElem>
           <Title>Design</Title>
           <BoxElem>
-            <IconContainer>
-              <DesignSvg />{' '}
-            </IconContainer>
+            <InView threshold="0.5">
+              {({ inView, ref }) => (
+                <IconContainer ref={ref}>
+                  <DesignSvg animate={inView} />
+                </IconContainer>
+              )}
+            </InView>
           </BoxElem>
           <BoxElem>
             <SkillList>
@@ -98,9 +106,13 @@ const Skills = () => {
           </BoxElem>
           <Title>Technology</Title>
           <BoxElem>
-            <IconContainer>
-              <TechnologySvg />{' '}
-            </IconContainer>
+            <InView threshold="0.5">
+              {({ inView, ref }) => (
+                <IconContainer ref={ref}>
+                  <TechnologySvg animate={inView} />
+                </IconContainer>
+              )}
+            </InView>
           </BoxElem>
           <BoxElem>
             <SkillList>
