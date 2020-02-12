@@ -29,7 +29,7 @@ const Principles = () => {
           </Icon>
           <Text>
             <h1>
-              An entrepreneurial mindset that can understands your business
+              An entrepreneurial mindset that can understand your business
             </h1>
             I had the chance to work in many sectors which allows me to easily
             understand a new business to bring fresh ideas to it.
