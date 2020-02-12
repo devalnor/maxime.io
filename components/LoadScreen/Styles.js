@@ -8,7 +8,7 @@ export const Container = styled(motion.div)`
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 999999;
+  z-index: 9999;
   color: white;
   background-color: black;
 `;
@@ -19,8 +19,15 @@ Container.defaultProps = {
   innitial: 'show',
   variants: {
     showed: {
-      opacity: 1
+      opacity: 1,
+      display: 'block',
     },
-    hidden: { opacity: 0 }
+    hidden: {
+      opacity: 0,
+      display: 'none',
+      transitionEnd: {
+        display: 'none'
+      }
+    }
   }
 };
