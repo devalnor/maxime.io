@@ -24,7 +24,6 @@ Container.defaultProps = {
     },
     hidden: {
       opacity: 0,
-      display: 'none',
       transitionEnd: {
         display: 'none'
       }
