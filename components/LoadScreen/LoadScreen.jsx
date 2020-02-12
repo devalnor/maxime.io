@@ -12,7 +12,7 @@ ScreenWrapper.propTypes = {
 
 const LoadScreen = () => (
   <FontObserver fontFamily={['Montreal Regular', 'Montserrat']}>
-    <ScreenWrapper />
+    <ScreenWrapper fontLoaded={false} />
   </FontObserver>
 );
 
