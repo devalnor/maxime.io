@@ -28,5 +28,5 @@ export const FontObserver = ({ fontFamily, children }) => {
 
 FontObserver.propTypes = {
   fontFamily: PropTypes.arrayOf(PropTypes.string).isRequired,
-  children: PropTypes.string.isRequired
+  children: PropTypes.node.isRequired
 };
