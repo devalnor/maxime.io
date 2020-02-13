@@ -63,7 +63,7 @@ const Arguments = () => {
           </Icon>
           <Text>
             <h1>A huge technologies lover</h1>
-            Since my first met with a Commodore 64 when I was 4, I’m in love
+            Since my first encounter with a Commodore 64 when I was 4, I’m in love
             with new technologies. As a self taught learner I’m always studying
             new trends like the Internet of Thing, Neural Network or Cloud
             Computing.
