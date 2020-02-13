@@ -20,7 +20,7 @@ Container.defaultProps = {
   variants: {
     showed: {
       opacity: 1,
-      display: 'block',
+      display: 'block'
     },
     hidden: {
       opacity: 0,

@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Quote from './Quote';
-import {
-  Style, Container, Row
-} from './Styles';
+import { Style, Container, Row } from './Styles';
 
 const Testimonials = () => {
   const [isVisible, setIsVisible] = useState(false);

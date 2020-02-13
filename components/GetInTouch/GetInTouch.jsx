@@ -33,7 +33,6 @@ const GetInTouch = () => {
           <Photo />
         </Profile>
         <Content>
-
           <Title>Get In Touch!</Title>
           <p>I&apos;ll be happy to talk business with you!</p>
           <Button>
@@ -57,7 +56,6 @@ const GetInTouch = () => {
               <LinkedIn />
             </a>
           </Logos>
-
         </Content>
       </Container>
     </Style>

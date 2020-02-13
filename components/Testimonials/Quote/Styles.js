@@ -52,6 +52,7 @@ export const HorizLine = styled.div`
   width: 90%;
   background-color: ${colors.blueSky};
   margin-top: 20px;
+
   /* mobile */
   @media (max-width: ${sizes.md}px) {
     width: 70%;

@@ -13,9 +13,7 @@ const Img = ({
       .join('.')}@${def}.${src.split('.').pop()} ${def}`
   );
   return (
-
     <img src={src} srcSet={srcSet} {...restprops} alt={alt} title={title} />
-
   );
 };
 
