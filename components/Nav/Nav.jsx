@@ -56,7 +56,11 @@ const Nav = () => {
       <Container>
         <Menu>
           <Button onClick={handleOnClick}>Get In Touch </Button>
-          <a href="https://be.linkedin.com/in/maximedevisscher" rel="noopener noreferrer" target="_blank">
+          <a
+            href="https://be.linkedin.com/in/maximedevisscher"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <LinkedIn />
           </a>
         </Menu>

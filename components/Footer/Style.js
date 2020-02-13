@@ -19,11 +19,11 @@ export const Style = styled.section`
 
 export const Container = styled.div`
   width: 1200px;
-  font-size:14px;
-  font-weight:200;
-  padding-left:130px;
-    /* mobile */
-    @media (max-width: ${sizes.ipad}px) {
-      padding-left:0;
+  font-size: 14px;
+  font-weight: 200;
+  padding-left: 130px;
+  /* mobile */
+  @media (max-width: ${sizes.ipad}px) {
+    padding-left: 0;
   }
 `;

@@ -22,14 +22,14 @@ export const Container = styled.div`
     flex-direction: column;
     padding-left: 0px;
     padding-top: 40px;
-  padding-bottom: 40px;
+    padding-bottom: 40px;
   }
 
   /* ipad  */
   @media (max-width: ${sizes.ipad}px) and (min-width: ${sizes.md}px) {
     padding-left: 40px;
     padding-top: 40px;
-  padding-bottom: 40px;
+    padding-bottom: 40px;
   }
 `;
 

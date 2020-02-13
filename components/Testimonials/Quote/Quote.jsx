@@ -24,7 +24,9 @@ const Quote = ({
         <Text>{children}</Text>
       </Box>
       <PeopleBox width="34%">
-        <ProfilePicture><Img src={picture} alt={fullName} title={fullName} /></ProfilePicture>
+        <ProfilePicture>
+          <Img src={picture} alt={fullName} title={fullName} />
+        </ProfilePicture>
         <Box width="100%" direction="column">
           <FullName>{fullName}</FullName>
           <Title>{title}</Title>

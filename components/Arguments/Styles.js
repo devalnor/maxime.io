@@ -33,7 +33,6 @@ export const Container = styled(motion.div)`
   }
 `;
 
-
 // Motion Framer Default Variants
 Container.defaultProps = {
   variants: {
@@ -45,7 +44,6 @@ Container.defaultProps = {
     }
   }
 };
-
 
 export const Title = styled.div`
   font-family: 'Montreal Regular';
@@ -81,7 +79,6 @@ Row.defaultProps = {
   }
 };
 
-
 export const Icon = styled.div`
   width: 50px;
   display: flex;
@@ -108,13 +105,11 @@ export const Text = styled.div`
   h1 {
     font-size: 20px;
     margin-bottom: 15px;
-    margin-top:10px;
+    margin-top: 10px;
   }
 
   /* ipad  */
   @media (max-width: ${sizes.ipad}px) and (min-width: ${sizes.md}px) {
     max-width: 700px;
   }
-
-
 `;

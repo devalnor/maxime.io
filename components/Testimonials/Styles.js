@@ -36,7 +36,6 @@ export const Container = styled(motion.div)`
   }
 `;
 
-
 // Motion Framer Default Variants
 Container.defaultProps = {
   initial: 'hidden',
@@ -49,7 +48,6 @@ Container.defaultProps = {
     }
   }
 };
-
 
 export const Row = styled(motion.div)`
   width: 100%;
@@ -67,7 +65,8 @@ Row.defaultProps = {
   transition: { duration: 1 },
   variants: {
     showed: {
-      opacity: 1, x: '0%'
+      opacity: 1,
+      x: '0%'
     },
     hidden: { opacity: 0, x: '-5%' }
   }

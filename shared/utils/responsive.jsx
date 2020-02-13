@@ -18,16 +18,10 @@ const AppMedia = createMedia({ breakpoints: sizes });
 export const mediaStyles = AppMedia.createMediaStyle();
 
 // Retro compatibility
-export const Desktop = (props) => (
-  <Media {...props} at="sm" />
-);
-export const Tablet = (props) => (
-  <Media {...props} at="md" />
-);
+export const Desktop = (props) => <Media {...props} at="sm" />;
+export const Tablet = (props) => <Media {...props} at="md" />;
 
-export const Mobile = (props) => (
-  <Media {...props} greaterThan="md" />
-);
+export const Mobile = (props) => <Media {...props} greaterThan="md" />;
 
 export const { Media, MediaContextProvider } = AppMedia;
 
