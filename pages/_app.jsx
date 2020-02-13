@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
+import React, { memo } from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
@@ -7,6 +8,11 @@ import LoadScreen from 'components/LoadScreen';
 // Fonts & Style
 import 'typeface-montserrat';
 import '../styles.css';
+
+// Run EsaterEff
+import easterEgg from 'shared/utils/easterEgg';
+
+easterEgg();
 
 class MyApp extends App {
   render() {
