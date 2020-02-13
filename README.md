@@ -20,7 +20,7 @@ Tools used
   * [NextJS](https://nextjs.org/): This a little bit an overkill choices for just a single web page but it is also for learning and demo purposes.
 * **Styling**:
   * [Styled-components](https://styled-components.com/): A great way to use ES6 and CSS to style.
-* Motion:
+* **Motion**:
   * [Framer Motion](https://www.framer.com/motion/): A great and power full react animations library.
 * **Responsive**:
   * [Fresnel](https://github.com/artsy/fresnel): An SSR compatible approach to CSS media query based responsive layouts for React (Even if SSR is overkill for this project, it work perfeclty).
