@@ -20,6 +20,8 @@ export const Container = styled(motion.div)`
   padding-top: 30px;
   padding-bottom: 30px;
   padding-left: 90px;
+  padding-right: 90px;
+
   /* ipad  */
   @media (max-width: ${sizes.ipad}px) and (min-width: ${sizes.md}px) {
     padding-left: 20px;
@@ -31,6 +33,7 @@ export const Container = styled(motion.div)`
     padding-left: 0px;
     padding-right: 0px;
     padding-top: 20px;
+    padding-bottom: 0px;
   }
 `;
 
@@ -64,11 +67,15 @@ export const Title = styled.div`
 
 export const Row = styled.div`
   width: 100%;
-  max-height: 520px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+
+  /* Desktop */
+  @media (min-width: ${sizes.md + 1}px) {
+    max-height: 620px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 
   /* ipad  */
   @media (max-width: ${sizes.ipad}px) and (min-width: ${sizes.md}px) {
@@ -79,9 +86,8 @@ export const Row = styled.div`
 export const SectorContainer = styled.div`
   display: flex;
   align-items: center;
-
   width: 20%;
-
+  max-width: 20%;
   /* mobile */
   @media (max-width: ${sizes.md}px) {
     width: 100%;
@@ -91,7 +97,6 @@ export const SectorContainer = styled.div`
     align-items: center;
     flex-direction: row;
     flex-wrap: nowrap;
-    width: 100%;
     min-height: 200px;
   }
 `;
@@ -100,14 +105,27 @@ export const Sector = styled(motion.div)`
   font-size: 15px;
   font-weight: 200;
   padding: 10px;
+  line-height: 1.1;
 
-  b {
+  /* mobile */
+  @media (max-width: ${sizes.md}px) {
+    max-width: 50%;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  h3 {
+    font-size: 15px;
     font-weight: 500;
+    margin-bottom: 10px;
   }
   ul {
     list-style-type: none;
     margin-top: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    li {
+      margin-top: 7px;
+    }
   }
 `;
 

@@ -40,6 +40,7 @@ const Customers = () => {
         </Row>
         <Row justify="flex-start">
           <ReactSwipe
+            id="customerSwipe"
             className="carousel"
             enabled={!(currentWidth >= sizes.md)}
             swipeOptions={{
@@ -49,7 +50,7 @@ const Customers = () => {
           >
             <SectorContainer>
               <Sector>
-                <b>Agencies</b>
+                <h3>Agencies</h3>
                 <ul>
                   <li>DogStudio</li>
                   <li>Emakina</li>
@@ -58,7 +59,7 @@ const Customers = () => {
             </SectorContainer>
             <SectorContainer>
               <Sector>
-                <b>Automotive</b>
+                <h3>Automotive</h3>
                 <ul>
                   <li>Audi</li>
                   <li>Interlease</li>
@@ -69,8 +70,8 @@ const Customers = () => {
             <SectorContainer>
               <Sector>
                 <b>
-                  Art, Tourism <br />
-                  and Entertainment
+                  Art, Tourism and
+                  <br /> Entertainment
                 </b>
                 <ul>
                   <li>Dragone</li>
@@ -81,7 +82,7 @@ const Customers = () => {
             </SectorContainer>
             <SectorContainer>
               <Sector>
-                <b>FMCG</b>
+                <h3>FMCG</h3>
                 <ul>
                   <li>Bongrain</li>
                   <li>PMI</li>
@@ -93,7 +94,7 @@ const Customers = () => {
             </SectorContainer>
             <SectorContainer>
               <Sector>
-                <b>Financial services</b>
+                <h3>Financial services</h3>
                 <ul>
                   <li>Axa Bank</li>
                   <li>BCGE</li>
@@ -106,7 +107,7 @@ const Customers = () => {
             </SectorContainer>
             <SectorContainer>
               <Sector>
-                <b>Industrial and Energy</b>
+                <h3>Industrial and Energy</h3>
                 <ul>
                   <li>Baxter</li>
                   <li>Engie</li>
@@ -118,7 +119,9 @@ const Customers = () => {
             </SectorContainer>
             <SectorContainer>
               <Sector>
-                <b>Institution, Education and Associations</b>
+                <h3>
+                  Institution, Education <br /> and Associations
+                </h3>
                 <ul>
                   <li>Belgium&apos;s Chancellery of the Prime Minister</li>
                   <li>CLL</li>
@@ -129,7 +132,7 @@ const Customers = () => {
             </SectorContainer>
             <SectorContainer>
               <Sector>
-                <b>Media</b>
+                <h3>Media</h3>
                 <ul>
                   <li>BBC Sport</li>
                   <li>IPM</li>
@@ -141,7 +144,7 @@ const Customers = () => {
             </SectorContainer>
             <SectorContainer>
               <Sector>
-                <b>Publishing</b>
+                <h3>Publishing</h3>
                 <ul>
                   <li>Casterman</li>
                   <li>Dargaud</li>
@@ -154,7 +157,7 @@ const Customers = () => {
             </SectorContainer>
             <SectorContainer>
               <Sector>
-                <b>Retail and distribution</b>
+                <h3>Retail and distribution</h3>
                 <ul>
                   <li>Cuisine Plus</li>
                   <li>Dufry</li>
@@ -167,7 +170,7 @@ const Customers = () => {
             </SectorContainer>
             <SectorContainer>
               <Sector>
-                <b>Travel and transporation</b>
+                <h3>Travel and transporation</h3>
                 <ul>
                   <li>Aegean</li>
                   <li>De Lijn</li>
@@ -181,11 +184,12 @@ const Customers = () => {
             </SectorContainer>
             <SectorContainer>
               <Sector>
-                <b>Telecom</b>
+                <h3>Telecom</h3>
                 <ul>
                   <li>Belgacom</li>
                   <li>Join Experience</li>
                   <li>Proximus</li>
+                  <li>Orange</li>
                   <li>VOO</li>
                 </ul>
               </Sector>
