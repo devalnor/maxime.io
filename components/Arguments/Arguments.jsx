@@ -6,7 +6,7 @@ import {
   Style, Container, Title, Row, Icon, Text
 } from './Styles';
 
-const Principles = () => {
+const Arguments = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [ref, inView] = useInView({
     threshold: 0.2
@@ -74,4 +74,4 @@ const Principles = () => {
   );
 };
 
-export default Principles;
+export default Arguments;
