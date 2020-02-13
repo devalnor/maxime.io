@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { memo } from 'react';
+import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
