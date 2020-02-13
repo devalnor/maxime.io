@@ -69,10 +69,10 @@ const Customers = () => {
             </SectorContainer>
             <SectorContainer>
               <Sector>
-                <b>
+                <h3>
                   Art, Tourism and
                   <br /> Entertainment
-                </b>
+                </h3>
                 <ul>
                   <li>Dragone</li>
                   <li>Musée d’Orsay</li>
