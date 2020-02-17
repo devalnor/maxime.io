@@ -23,7 +23,8 @@
     "react-scroll": "^1.7.16",
     "styled-components": "^5.0.0",
     "swipe-js-iso": "^2.1.5",
-    "typeface-montserrat": "0.0.75"
+    "typeface-montserrat": "0.0.75",
+    "use-ackee": "^0.1.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^5.1.0",
