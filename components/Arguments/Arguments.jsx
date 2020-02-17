@@ -2,9 +2,7 @@
 import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Emoji from 'shared/components/Emoji';
-import {
-  Style, Container, Title, Row, Icon, Text
-} from './Styles';
+import { Style, Container, Title, Row, Icon, Text } from './Styles';
 
 const Arguments = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,8 +29,8 @@ const Arguments = () => {
             <h1>
               An entrepreneurial mindset that can understand your business
             </h1>
-            I had the chance to work in many sectors which allows me to easily
-            understand a new business to bring fresh ideas to it.
+            I had the chance to work in many sectors. This allows me to easily
+            understand a new business and to bring fresh ideas to it.
           </Text>
         </Row>
         <Row>
@@ -40,9 +38,9 @@ const Arguments = () => {
             <Emoji label="Idea">💡</Emoji>
           </Icon>
           <Text>
-            <h1>A creative asset that is not afraid to explore new ideas</h1>
+            <h1>A creative asset not afraid to explore new ideas</h1>
             People know me to suggest landing on the moon. Not because it’s
-            crazy, because the higher the goal, the greater the rewards.
+            crazy but because the higher the goal, the greater the rewards.
           </Text>
         </Row>
         <Row>
@@ -62,11 +60,11 @@ const Arguments = () => {
             <Emoji label="Man Technologist">👨‍💻</Emoji>
           </Icon>
           <Text>
-            <h1>A huge technologies lover</h1>
-            Since my first encounter with a Commodore 64 when I was 4, I’m in love
-            with new technologies. As a self taught learner I’m always studying
-            new trends like the Internet of Thing, Neural Network or Cloud
-            Computing.
+            <h1>A huge tech lover</h1>
+            Since my first encounter with a Commodore 64 when I was 4, I’m in
+            love with new technologies. As a self taught learner I’m always
+            studying new trends like the Internet of Thing, Neural Network or
+            Cloud Computing.
           </Text>
         </Row>
       </Container>

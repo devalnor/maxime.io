@@ -26,7 +26,7 @@ const Testimonials = () => {
             picture="/static/img/people/apa.png"
           >
             I can only say how impressed I am with his{' '}
-            <b>amazing mix of digital culture</b>, creativity and skill. He is{' '}
+            <b>amazing mix of digital culture</b>, creativity and skills. He is{' '}
             <b>a true swiss knife</b> able to work on a variety of aread from
             pitches, to UX design, to coding.
           </Quote>
