@@ -1,0 +1,4 @@
+Sitemap: https://maxime.io/sitemap.xml
+
+User-agent: *
+Allow: /
