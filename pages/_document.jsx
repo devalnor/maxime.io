@@ -1,6 +1,4 @@
-import Document, {
-  Html, Head, Main, NextScript
-} from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import { mediaStyles } from 'shared/utils/responsive';
 
@@ -9,10 +7,11 @@ export default class MyDocument extends Document {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
     try {
-      ctx.renderPage = () => originalRenderPage({
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />)
-      });
+      ctx.renderPage = () =>
+        originalRenderPage({
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
+        });
       const initialProps = await Document.getInitialProps(ctx);
 
       return {
@@ -35,8 +34,7 @@ export default class MyDocument extends Document {
         <Head>
           <meta
             name="description"
-            c
-            ontent="I’m an experienced digital consultant with a broad skill set and deep understanding of the interplay between business, design and technology. Over the last decade, I helped customers crafting solution that meet the holy grail of memorable user experiences in their digital ecosystem."
+            content="I’m an experienced digital consultant with a broad skill set and deep understanding of the interplay between business, design and technology. Over the last decade, I helped customers crafting solution that meet the holy grail of memorable user experiences in their digital ecosystem."
           />
           <meta
             property="og:title"
@@ -46,14 +44,17 @@ export default class MyDocument extends Document {
             property="og:description"
             content="Developing innovative solutions that bring Customer Experience to your business goals is a passion."
           />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:image"
+            content="https://maxime.io/static/img/opengraph-1200x630.jpg"
+          />
+          <meta property="og:image:width" content="1200" />
+          <meta property="og:image:height" content="630" />
           <style
             type="text/css"
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: mediaStyles }}
-          />
-          <meta
-            property="og:image"
-            content="https://maxime.io/static/img/me.jpg"
           />
         </Head>
         <body>
