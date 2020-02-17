@@ -2,7 +2,9 @@
 import { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Emoji from 'shared/components/Emoji';
-import { Style, Container, Title, Row, Icon, Text } from './Styles';
+import {
+  Style, Container, Title, Row, Icon, Text
+} from './Styles';
 
 const Arguments = () => {
   const [isVisible, setIsVisible] = useState(false);
