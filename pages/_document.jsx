@@ -51,12 +51,6 @@ export default class MyDocument extends Document {
           />
           <meta property="og:image:width" content="1200" />
           <meta property="og:image:height" content="630" />
-          <meta
-            property="og:image"
-            content="https://maxime.io/static/img/me.jpg"
-          />
-          <meta property="og:image:width" content="1536" />
-          <meta property="og:image:height" content="1536" />
           <style
             type="text/css"
             // eslint-disable-next-line react/no-danger
