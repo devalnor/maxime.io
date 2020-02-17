@@ -21,7 +21,7 @@ function HomePage() {
     },
     {
       ignoreLocalhost: true,
-      detailed: false
+      detailed: true
     }
   );
   return (
