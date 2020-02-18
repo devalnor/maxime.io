@@ -1,4 +1,6 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, {
+  Html, Head, Main, NextScript
+} from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 import { mediaStyles } from 'shared/utils/responsive';
 
@@ -7,11 +9,10 @@ export default class MyDocument extends Document {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
     try {
-      ctx.renderPage = () =>
-        originalRenderPage({
-          // eslint-disable-next-line react/jsx-props-no-spreading
-          enhanceApp: App => props => sheet.collectStyles(<App {...props} />)
-        });
+      ctx.renderPage = () => originalRenderPage({
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        enhanceApp: (App) => (props) => sheet.collectStyles(<App {...props} />)
+      });
       const initialProps = await Document.getInitialProps(ctx);
 
       return {
@@ -55,6 +56,12 @@ export default class MyDocument extends Document {
             type="text/css"
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: mediaStyles }}
+          />
+          <script
+            async
+            src="https://ackee-analytics-tool.herokuapp.com/tracker.js"
+            data-ackee-server="https://ackee-analytics-tool.herokuapp.com"
+            data-ackee-domain-id="e6d174ce-2252-470d-b942-7dea8e98c1aa"
           />
         </Head>
         <body>

@@ -1,5 +1,4 @@
 import { MediaContextProvider } from 'shared/utils/responsive';
-import { useAckee } from 'use-ackee';
 import Nav from 'components/Nav';
 import Introduction from 'components/Introduction';
 import Skills from 'components/Skills';
@@ -13,17 +12,7 @@ import Footer from 'components/Footer';
 
 function HomePage() {
   // To move if a router is implemented
-  useAckee(
-    '/',
-    {
-      server: 'https://ackee-analytics-tool.herokuapp.com',
-      domainId: 'e6d174ce-2252-470d-b942-7dea8e98c1aa'
-    },
-    {
-      ignoreLocalhost: true,
-      detailed: true
-    }
-  );
+
   return (
     <MediaContextProvider>
       <header>
