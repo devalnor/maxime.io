@@ -102,7 +102,7 @@ export const Text = styled.div`
   align-items: center;
   font-size: 20px;
   margin-bottom: 40px;
-  h1 {
+  h2 {
     font-size: 20px;
     margin-bottom: 15px;
     margin-top: 10px;

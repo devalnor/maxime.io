@@ -28,9 +28,9 @@ const Arguments = () => {
             <Emoji label="Briefcase">💼</Emoji>
           </Icon>
           <Text>
-            <h1>
+            <h2>
               An entrepreneurial mindset that can understand your business
-            </h1>
+            </h2>
             I had the chance to work in many sectors. This allows me to easily
             understand a new business and to bring fresh ideas to it.
           </Text>
@@ -40,7 +40,7 @@ const Arguments = () => {
             <Emoji label="Idea">💡</Emoji>
           </Icon>
           <Text>
-            <h1>A creative asset not afraid to explore new ideas</h1>
+            <h2>A creative asset not afraid to explore new ideas</h2>
             People know me to suggest landing on the moon. Not because it’s
             crazy but because the higher the goal, the greater the rewards.
           </Text>
@@ -50,7 +50,7 @@ const Arguments = () => {
             <Emoji label="Hourglass">⏳</Emoji>
           </Icon>
           <Text>
-            <h1>A self-managing collaborator who won’t waste your time</h1>
+            <h2>A self-managing collaborator who won’t waste your time</h2>
             I’ve worked as an independent freelance since the beginning of my
             career and I don’t need constant hand-holding in order to be
             productive. I know when to make decisions independently and when to
@@ -62,7 +62,7 @@ const Arguments = () => {
             <Emoji label="Man Technologist">👨‍💻</Emoji>
           </Icon>
           <Text>
-            <h1>A huge tech lover</h1>
+            <h2>A huge tech lover</h2>
             Since my first encounter with a Commodore 64 when I was 4, I’m in
             love with new technologies. As a self taught learner I’m always
             studying new trends like the Internet of Thing, Neural Network or

@@ -30,7 +30,7 @@ const Principles = () => {
             <Emoji label="Rocket">🚀</Emoji>
           </Icon>
           <Text>
-            <h1>Adopt the « First Principle » way of thinking</h1>
+            <h2>Adopt the « First Principle » way of thinking</h2>
             Start thinking on the first basis from which a thing is known. First
             principles is a way of thinking by which a person breaks down a
             problem to its simplest element so that a solution can be found.
@@ -43,7 +43,7 @@ const Principles = () => {
             <Emoji label="Kiss">💋</Emoji>
           </Icon>
           <Text>
-            <h1>Keep It Stupid Simple (KISS)</h1>
+            <h2>Keep It Stupid Simple (KISS)</h2>
             From Kelly Johnson aircraft engineer of the famous us aircraft SR-71
             Blackbird. Most solutions work best if they are kept simple rather
             than made complicated. Since then, all software developper know for
@@ -55,7 +55,7 @@ const Principles = () => {
             <Emoji label="Peak-No-Evil Monkey">🙊</Emoji>
           </Icon>
           <Text>
-            <h1>Watch out the bullshits</h1>
+            <h2>Watch out the bullshits</h2>
             Nobody is perfect, always be honest to acknowledge when you made
             bullshit. Is this third principle another one? I’ll let you judge by
             yourself ;)

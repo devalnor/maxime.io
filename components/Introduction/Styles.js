@@ -44,7 +44,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Quote = styled.div`
+export const Quote = styled.h1`
   font-family: 'Montreal Regular';
   max-width: 740px;
   font-size: 45px;
