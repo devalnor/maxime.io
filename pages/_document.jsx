@@ -46,6 +46,7 @@ export default class MyDocument extends Document {
             content="Developing innovative solutions that bring Customer Experience to your business goals is a passion."
           />
           <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://maxime.io" />
           <meta
             property="og:image"
             content="https://maxime.io/static/img/opengraph-1200x630.jpg"
