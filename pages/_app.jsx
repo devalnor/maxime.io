@@ -9,10 +9,14 @@ import LoadScreen from 'components/LoadScreen';
 import 'typeface-montserrat';
 import '../styles.css';
 
-// Run EsaterEff
+// Schema
+import Schema from 'shared/components/Schema';
+
+// Run EasterEff
 import easterEgg from 'shared/utils/easterEgg';
 
 easterEgg();
+
 
 class MyApp extends App {
   render() {
@@ -23,16 +27,7 @@ class MyApp extends App {
           <title>
             Maxime de Visscher | Technology Expert &amp; Digital Consultant
           </title>
-          <script type="application/ld+json">
-            {`
-  "@context": "https://schema.org/",
-  "@type": "Person",
-  "name": "Maxime de Visscher",
-  "url": "https://maxime.io",
-  "image": "https://maxime.io/static/img/opengraph-1200x630.jpg",
-  "jobTitle": "Technology Expert &amp; Digital Consultant"
-`}
-          </script>
+          <Schema />
         </Head>
         <LoadScreen />
         <Component {...pageProps} />
