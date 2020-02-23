@@ -23,6 +23,16 @@ class MyApp extends App {
           <title>
             Maxime de Visscher | Technology Expert &amp; Digital Consultant
           </title>
+          <script type="application/ld+json">
+            {`
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Maxime de Visscher",
+  "url": "https://maxime.io",
+  "image": "https://maxime.io/static/img/opengraph-1200x630.jpg",
+  "jobTitle": "Technology Expert &amp; Digital Consultant"
+`}
+          </script>
         </Head>
         <LoadScreen />
         <Component {...pageProps} />
