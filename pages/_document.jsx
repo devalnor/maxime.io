@@ -35,7 +35,7 @@ export default class MyDocument extends Document {
         <Head>
           <meta
             name="description"
-            content="I’m an experienced digital consultant with a broad skill set and deep understanding of the interplay between business, design and technology. Over the last decade, I helped customers crafting solution that meet the holy grail of memorable user experiences in their digital ecosystem."
+            content="An experienced digital consultant with a broad skill set and deep understanding of the interplay between business, design and technology."
           />
           <meta
             property="og:title"
