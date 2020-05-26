@@ -14,7 +14,7 @@
     "fontfaceobserver": "^2.1.0",
     "framer-motion": "^1.8.4",
     "lodash.isequal": "^4.5.0",
-    "next": "^9.2.1",
+    "next": "^9.3.2",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
