@@ -7,20 +7,24 @@ export const useFontFace = (fontFamilies, timeout = 2000) => {
 
   useEffect(() => {
     const observers = fontFamilies.map((fontFamily) => new FontFaceObserver(fontFamily).load());
-
+    let isPromiseResolved = false;
     Promise.all(observers)
       .then(() => {
+        isPromiseResolved = true;
         setFontLoaded(true);
       })
       .catch(() => {
+        isPromiseResolved = true;
         setFontLoaded(false);
       });
 
     // Force a timeout even if all the fonts are not loaded
     // This will produce a FOUT effect but nevermind it's beter than a black screen
     setTimeout(() => {
-      console.warn('Font loading timeout');
-      setFontLoaded(true);
+      if (!isPromiseResolved) {
+        console.warn('Font loading timeout');
+        setFontLoaded(true);
+      }
     }, timeout);
   }, [fontFamilies]);
 
