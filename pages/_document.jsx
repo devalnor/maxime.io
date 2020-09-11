@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import Document, {
   Html, Head, Main, NextScript
 } from 'next/document';
@@ -58,12 +59,29 @@ export default class MyDocument extends Document {
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: mediaStyles }}
           />
+
+          {/* Analytics */}
+          {
+            // This can be removed after 2020-11-01
+            new Date() > new Date('2020 11 01')
+            || (
+
+            <script
+              async
+              src="https://ackee-analytics-tool.herokuapp.com/tracker.js"
+              data-ackee-server="https://ackee-analytics-tool.herokuapp.com"
+              data-ackee-domain-id="e6d174ce-2252-470d-b942-7dea8e98c1aa"
+            />
+            )
+          }
+
           <script
             async
-            src="https://ackee-analytics-tool.herokuapp.com/tracker.js"
-            data-ackee-server="https://ackee-analytics-tool.herokuapp.com"
-            data-ackee-domain-id="e6d174ce-2252-470d-b942-7dea8e98c1aa"
+            defer
+            data-website-id="99b8581d-9792-4bcc-86a8-000c9ddfe628"
+            src="https://umami.macoal.com/umami.js"
           />
+
         </Head>
         <body>
           <Main />
