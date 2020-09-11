@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import FontFaceObserver from 'fontfaceobserver';
 
-export const useFontFace = (fontFamilies) => {
+export const useFontFace = (fontFamilies, timeout = 2000) => {
   const [fontLoaded, setFontLoaded] = useState(false);
 
   useEffect(() => {
@@ -15,6 +15,13 @@ export const useFontFace = (fontFamilies) => {
       .catch(() => {
         setFontLoaded(false);
       });
+
+    // Force a timeout even if all the fonts are not loaded
+    // This will produce a FOUT effect but nevermind it's beter than a black screen
+    setTimeout(() => {
+      console.warn('Font loading timeout');
+      setFontLoaded(true);
+    }, timeout);
   }, [fontFamilies]);
 
   return fontLoaded;
