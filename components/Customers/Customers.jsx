@@ -126,6 +126,7 @@ const Customers = () => {
                   <li>CLL</li>
                   <li>Education Above All Fundation</li>
                   <li>European Parliament</li>
+                  <li>IHECS Academy</li>
                 </ul>
               </Sector>
             </SectorContainer>
