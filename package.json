@@ -3,39 +3,38 @@
   "version": "1.0.0",
   "description": "Maxime de Visscher Pro Website 2020",
   "scripts": {
-    "dev": "NODE_PATH=. next",
-    "build": "NODE_PATH=. next build",
-    "start": "NODE_PATH=. next start"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
   "author": "Maxime de Visscher",
   "license": "ISC",
   "dependencies": {
     "@artsy/fresnel": "^1.0.13",
     "fontfaceobserver": "^2.1.0",
-    "framer-motion": "^1.8.4",
+    "framer-motion": "^1.11.1",
     "lodash.isequal": "^4.5.0",
-    "next": "^9.3.2",
+    "next": "^9.5.3",
     "prop-types": "^15.7.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-intersection-observer": "^8.25.2",
-    "react-obfuscate": "^3.6.6",
-    "react-scroll": "^1.7.16",
-    "styled-components": "^5.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-intersection-observer": "^8.28.4",
+    "react-obfuscate": "^3.6.7",
+    "react-scroll": "^1.8.1",
+    "styled-components": "^5.2.0",
     "swipe-js-iso": "^2.1.5",
-    "typeface-montserrat": "0.0.75",
-    "use-ackee": "^0.1.0"
+    "typeface-montserrat": "0.0.75"
   },
   "devDependencies": {
-    "@svgr/webpack": "^5.1.0",
-    "babel-plugin-styled-components": "^1.10.7",
-    "eslint": "^6.8.0",
-    "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-react": "^7.18.3",
-    "eslint-plugin-react-hooks": "^1.7.0",
-    "prettier": "^1.19.1"
+    "@svgr/webpack": "^5.4.0",
+    "babel-plugin-styled-components": "^1.11.1",
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.1",
+    "prettier": "^2.1.1"
   }
 }

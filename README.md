@@ -30,7 +30,6 @@ Tools used
   * [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer): React implementation of the Intersection Observer API.
   * [react-obfuscate](https://github.com/coston/react-obfuscate): To obfuscate any contact against spam bots.
   * [swipe-js-iso](https://www.npmjs.com/package/swipe-js-iso): Maybe not the best solution but it work for me.
-  * [useAckee](https://github.com/electerious/use-ackee): Hooks for Ackee, a Self-hosted based analytics tool for those who care about privacy.
   * [Lodash](https://lodash.com/): Just a little bit of isEqual...
 
   
