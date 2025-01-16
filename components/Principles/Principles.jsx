@@ -30,12 +30,11 @@ const Principles = () => {
             <Emoji label="Rocket">🚀</Emoji>
           </Icon>
           <Text>
-            <h2>Adopt the « First Principle » way of thinking</h2>
-            Start thinking on the first basis from which a thing is known. First
-            principles is a way of thinking by which a person breaks down a
-            problem to its simplest element so that a solution can be found.
-            Aristotle is credited with its creation and Elon Musk is a great
-            advocate of this way of thinking.
+            <h2>Adopt the « First Principle » way of thinking</h2> 
+            Start thinking on the first basis from which a thing is known. 
+            First principles is a way of thinking by which a person breaks down a problem to its simplest 
+            element so that a solution can be found. Aristotle is credited with its creation, and it remains a 
+            timeless and powerful approach to problem-solving.
           </Text>
         </Row>
         <Row>
