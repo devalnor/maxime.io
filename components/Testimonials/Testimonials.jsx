@@ -4,9 +4,9 @@ import Quote from './Quote';
 import { Style, Container, Row } from './Styles';
 
 const Testimonials = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [ref, inView] = useInView({
-    threshold: 0.1
+    threshold: 0.1,
   });
 
   useEffect(() => {

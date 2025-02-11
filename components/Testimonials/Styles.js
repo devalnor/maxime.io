@@ -41,12 +41,12 @@ Container.defaultProps = {
   initial: 'hidden',
   variants: {
     showed: {
-      transition: { staggerChildren: 0.25, delayChildren: 0 }
+      transition: { staggerChildren: 0.25, delayChildren: 0 },
     },
     hidden: {
-      transition: { staggerChildren: 0.05, staggerDirection: -1 }
-    }
-  }
+      transition: { staggerChildren: 0.05, staggerDirection: -1 },
+    },
+  },
 };
 
 export const Row = styled(motion.div)`
@@ -66,8 +66,8 @@ Row.defaultProps = {
   variants: {
     showed: {
       opacity: 1,
-      x: '0%'
+      x: '0%',
     },
-    hidden: { opacity: 0, x: '-5%' }
-  }
+    hidden: { opacity: 0, x: '-5%' },
+  },
 };
