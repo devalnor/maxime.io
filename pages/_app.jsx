@@ -17,7 +17,6 @@ import easterEgg from 'shared/utils/easterEgg';
 
 easterEgg();
 
-
 class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
@@ -39,7 +38,7 @@ class MyApp extends App {
 MyApp.propTypes = {
   Component: PropTypes.elementType.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
-  pageProps: PropTypes.object.isRequired
+  pageProps: PropTypes.object.isRequired,
 };
 
 export default MyApp;

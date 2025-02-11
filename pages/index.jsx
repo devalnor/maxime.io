@@ -22,9 +22,11 @@ function HomePage() {
         <Introduction />
         <Skills />
         <Technologies />
-        {/* <Testimonials />
+        {/*
+        <Testimonials />
         <Principles />
-        <Arguments />*/}
+        <Arguments />
+        */}
         <Customers />
         <GetInTouch />
       </main>
