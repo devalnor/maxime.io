@@ -85,7 +85,7 @@ export const About = styled.div`
   padding-bottom: 40px;
   /* Mobile */
   @media (max-width: ${sizes.md}px) {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 27px;
   }
 `;

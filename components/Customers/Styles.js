@@ -105,7 +105,7 @@ export const Sector = styled(motion.div)`
   font-size: 15px;
   font-weight: 200;
   padding: 10px;
-  line-height: 1.1;
+  line-height: 1.4;
 
   /* mobile */
   @media (max-width: ${sizes.md}px) {
