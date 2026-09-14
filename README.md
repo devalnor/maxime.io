@@ -5,8 +5,7 @@
 
 
 
-Development
-===========
+## Development
 
 The project pins Node.js 22.13.1 through Volta.
 
@@ -15,8 +14,7 @@ The project pins Node.js 22.13.1 through Volta.
 * `npm run lint`
 * `npm run build`
 
-Tools used
-==========
+## Tools used
 
 * **Framework**:
   * [Next.js](https://nextjs.org/)
@@ -34,11 +32,9 @@ Tools used
   * [swipe-js-iso](https://www.npmjs.com/package/swipe-js-iso)
 
   
-Contact
-======= 
+## Contact
 Maxime de Visscher - <a href="https://www.linkedin.com/in/maximedevisscher">LinkedIn</a>
 
 
-License
-=======
+## License
 Copyright © 2020–2026 Macoal.
