@@ -26,7 +26,6 @@ The project pins Node.js 22.13.1 through Volta.
   * [Fresnel](https://github.com/artsy/fresnel)
 * **Others**:
   * [Font Face Observer](https://fontfaceobserver.com/)
-  * [react-scroll](https://github.com/fisshy/react-scroll)
   * [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer)
   * [react-obfuscate](https://github.com/coston/react-obfuscate)
   * [swipe-js-iso](https://www.npmjs.com/package/swipe-js-iso)

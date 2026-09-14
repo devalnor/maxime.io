@@ -20,7 +20,6 @@
     "react-dom": "^17.0.2",
     "react-intersection-observer": "^8.31.0",
     "react-obfuscate": "^3.6.8",
-    "react-scroll": "^1.8.2",
     "styled-components": "^5.3.11",
     "swipe-js-iso": "^2.1.5",
     "typeface-montserrat": "0.0.75"

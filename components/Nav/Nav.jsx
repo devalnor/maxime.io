@@ -1,5 +1,4 @@
 import { useState, useCallback } from 'react';
-import { animateScroll } from 'react-scroll';
 
 import useEventListener from 'shared/hooks/useEventListener';
 import {
@@ -42,8 +41,13 @@ const Nav = () => {
   };
 
   const handleOnClick = () => {
-    // window.scrollTo(0, document.body.scrollHeight);
-    animateScroll.scrollToBottom();
+    const contact = document.getElementById('contact');
+    if (contact) {
+      contact.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
   };
 
   return (

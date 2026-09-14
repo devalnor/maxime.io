@@ -13,7 +13,7 @@ import {
 } from './Styles';
 
 const GetInTouch = () => (
-  <Style>
+  <Style id="contact">
     <Container>
       <Profile>
         <Photo />
