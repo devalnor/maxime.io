@@ -10,6 +10,9 @@ but its technology and content both read as a 2020 portfolio. The production
 build succeeds on Node.js 22, yet the dependency tree contains 21 known
 vulnerabilities: 1 critical, 15 high, 4 moderate and 1 low.
 
+**Design score: C. AI-slop score: A.** The page needs structural and content
+work, but its portrait-led identity does not look like a generic template.
+
 The right next move is a focused modernization, not a series of blind package
 bumps. Next.js 12, React 17, styled-components 5 and Framer Motion 5 all sit
 several major versions behind their current releases. The older responsive,
@@ -45,7 +48,7 @@ framework upgrade harder than the size of this one-page site should warrant.
 
 1. The custom Babel configuration disables Next.js's SWC compiler.
 2. The ESLint setup does not extend the Next.js plugin and is on ESLint 7.
-3. The initial JavaScript payload is about 153 kB, high for a mostly static
+3. The initial JavaScript payload is about 147 kB, high for a mostly static
    professional page.
 4. `now.json` predates current Vercel configuration conventions.
 5. PNG logos and photos lack explicit dimensions and modern image delivery.
@@ -93,6 +96,7 @@ These cannot be guessed safely from the repository:
 - Fixed the broken Montreal Bold font URL and enabled `font-display: swap`.
 - Removed the blocking font-loading screen.
 - Anchored the navigation CTA to the contact section and removed react-scroll.
+- Reduced first-load JavaScript from about 155 kB to 147 kB.
 - Refreshed grammar, labels, metadata, canonical URL, sitemap date and copyright.
 - Removed dead imports and an expired analytics branch.
 - Added a documented lint command and current local setup instructions.
