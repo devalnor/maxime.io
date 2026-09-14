@@ -19,8 +19,8 @@ const GetInTouch = () => (
         <Photo />
       </Profile>
       <Content>
-        <Title>Get In Touch!</Title>
-        <p>I&apos;ll be happy to talk business with you!</p>
+        <Title>Get in touch</Title>
+        <p>Let&apos;s talk about what you&apos;re building.</p>
         <Button>
           <Obfuscate
             aria-label="Send Maxime de Visscher an email"

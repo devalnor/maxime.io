@@ -5,7 +5,7 @@ const StructData = () => {
     name: 'Maxime de Visscher',
     url: 'https://maxime.io',
     image: 'https://maxime.io/static/img/opengraph-1200x630.jpg',
-    jobTitle: 'Technology Expert &amp; Digital Consultant'
+    jobTitle: 'Technology Expert & Digital Consultant'
   };
 
   // eslint-disable-next-line react/no-danger

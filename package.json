@@ -1,7 +1,7 @@
 {
   "name": "maxime.io",
   "version": "1.0.0",
-  "description": "Maxime de Visscher Pro Website 2020",
+  "description": "Professional website of Maxime de Visscher",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

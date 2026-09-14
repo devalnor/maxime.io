@@ -36,15 +36,16 @@ export default class MyDocument extends Document {
         <Head>
           <meta
             name="description"
-            content="An experienced digital consultant with a broad skill set and deep understanding of the interplay between business, design and technology."
+            content="Maxime de Visscher connects business, design and technology to create useful, memorable digital experiences."
           />
+          <link rel="canonical" href="https://maxime.io/" />
           <meta
             property="og:title"
             content="Maxime de Visscher - Technology Expert &amp; Digital Consultant"
           />
           <meta
             property="og:description"
-            content="Developing innovative solutions that bring Customer Experience to your business goals is a passion."
+            content="Connecting business, design and technology to create useful, memorable digital experiences."
           />
           <meta property="og:type" content="website" />
           <meta property="og:url" content="https://maxime.io" />
@@ -59,21 +60,6 @@ export default class MyDocument extends Document {
             // eslint-disable-next-line react/no-danger
             dangerouslySetInnerHTML={{ __html: mediaStyles }}
           />
-
-          {/* Analytics */}
-          {
-            // This can be removed after 2020-11-01
-            new Date() > new Date('2020 11 01')
-            || (
-
-            <script
-              async
-              src="https://ackee-analytics-tool.herokuapp.com/tracker.js"
-              data-ackee-server="https://ackee-analytics-tool.herokuapp.com"
-              data-ackee-domain-id="e6d174ce-2252-470d-b942-7dea8e98c1aa"
-            />
-            )
-          }
 
           <script
             async

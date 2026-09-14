@@ -21,15 +21,14 @@ const Introduction = () => (
       </AuthorBox>
 
       <Quote>
-        Developing innovative solutions that bring Customer Experience to your
-        business goals <u>is a passion</u>.
+        Developing innovative solutions that connect customer experience with
+        business goals <u>is my passion</u>.
       </Quote>
       <About>
-        I’m an experienced digital consultant with a broad skill set and deep
-        understanding of the interplay between <b>business</b>, <b>design</b>{' '}
-        and <b>technology</b>. Over the last decade, I helped customers crafting
-        solution that meet the holy grail of memorable user experiences in their
-        digital ecosystem.
+        I’m an experienced digital consultant with a broad skill set and a deep
+        understanding of how <b>business</b>, <b>design</b> and <b>technology</b>{' '}
+        work together. Over the years, I’ve helped organizations craft solutions
+        that create useful, memorable experiences across their digital ecosystems.
       </About>
     </Container>
   </Style>

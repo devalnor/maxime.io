@@ -36,7 +36,7 @@ const Customers = () => {
     <Style>
       <Container ref={ref} animate={isVisible ? 'showed' : 'hidden'}>
         <Row>
-          <Title>Missions I have worked on</Title>
+          <Title>Selected organizations I’ve worked with</Title>
         </Row>
         <Row justify="flex-start">
           <ReactSwipe
@@ -170,7 +170,7 @@ const Customers = () => {
             </SectorContainer>
             <SectorContainer>
               <Sector>
-                <h3>Travel and transporation</h3>
+                <h3>Travel and transportation</h3>
                 <ul>
                   <li>Aegean</li>
                   <li>De Lijn</li>
