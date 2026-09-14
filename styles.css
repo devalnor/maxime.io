@@ -2,6 +2,7 @@
   font-family: 'Montreal Regular';
   font-style: normal;
   font-weight: normal;
+  font-display: swap;
   src: local('Montreal Regular'),
     url('/static/fonts/Montreal-Regular.woff') format('woff');
 }
@@ -10,8 +11,9 @@
   font-family: 'Montreal Bold';
   font-style: normal;
   font-weight: normal;
+  font-display: swap;
   src: local('Montreal Bold'),
-    url('/static/fontsMontreal-Bold.woff') format('woff');
+    url('/static/fonts/Montreal-Bold.woff') format('woff');
 }
 
 * {
