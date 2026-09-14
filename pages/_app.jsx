@@ -3,7 +3,6 @@ import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
 import PropTypes from 'prop-types';
-import LoadScreen from 'components/LoadScreen';
 
 // Fonts & Style
 import 'typeface-montserrat';
@@ -28,7 +27,6 @@ class MyApp extends App {
           </title>
           <Schema />
         </Head>
-        <LoadScreen />
         <Component {...pageProps} />
       </>
     );

@@ -5,32 +5,33 @@
 
 
 
-How to start
-============
+Development
+===========
 
-I recommand to  use **Node v12** or if you have nvm, start with `nvm use`
+The project pins Node.js 22.13.1 through Volta.
 
-* `npm install`
+* `npm ci`
 * `npm run dev`
+* `npm run lint`
+* `npm run build`
 
 Tools used
 ==========
 
 * **Framework**:
-  * [NextJS](https://nextjs.org/): This a little bit an overkill choices for just a single web page but it is also for learning and demo purposes.
+  * [Next.js](https://nextjs.org/)
 * **Styling**:
-  * [Styled-components](https://styled-components.com/): A great way to use ES6 and CSS to style.
+  * [styled-components](https://styled-components.com/)
 * **Motion**:
-  * [Framer Motion](https://www.framer.com/motion/): A great and power full react animations library.
+  * [Motion](https://www.framer.com/motion/)
 * **Responsive**:
-  * [Fresnel](https://github.com/artsy/fresnel): An SSR compatible approach to CSS media query based responsive layouts for React (Even if SSR is overkill for this project, it work perfeclty).
+  * [Fresnel](https://github.com/artsy/fresnel)
 * **Others**:
-  * [Fontface Observer](https://fontfaceobserver.com/): A good solution against the FOUT effect that I converted to custom Hook.
-  * [React-scroll](https://github.com/fisshy/react-scroll): Component for animating vertical scrolling.
-  * [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer): React implementation of the Intersection Observer API.
-  * [react-obfuscate](https://github.com/coston/react-obfuscate): To obfuscate any contact against spam bots.
-  * [swipe-js-iso](https://www.npmjs.com/package/swipe-js-iso): Maybe not the best solution but it work for me.
-  * [Lodash](https://lodash.com/): Just a little bit of isEqual...
+  * [Font Face Observer](https://fontfaceobserver.com/)
+  * [react-scroll](https://github.com/fisshy/react-scroll)
+  * [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer)
+  * [react-obfuscate](https://github.com/coston/react-obfuscate)
+  * [swipe-js-iso](https://www.npmjs.com/package/swipe-js-iso)
 
   
 Contact
@@ -38,6 +39,6 @@ Contact
 Maxime de Visscher - <a href="https://www.linkedin.com/in/maximedevisscher">LinkedIn</a>
 
 
-Licences
-========
-Copyright © 2020 Macoal sprl.
+License
+=======
+Copyright © 2020–2026 Macoal.
