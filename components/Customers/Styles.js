@@ -50,7 +50,7 @@ Container.defaultProps = {
   }
 };
 
-export const Title = styled.div`
+export const Title = styled.h2`
   font-family: 'Montreal Regular';
   font-size: 38px;
   color: white;

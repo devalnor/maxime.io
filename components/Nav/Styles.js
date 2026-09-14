@@ -31,6 +31,14 @@ export const Menu = styled.div`
   justify-content: flex-end;
   align-items: center;
   color: white;
+
+  a {
+    display: flex;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const Button = styled.button`
