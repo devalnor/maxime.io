@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+---
+
+<BaseLayout
+  title="Lab | Maxime de Visscher"
+  description="Independent experiments in AI, IoT and emerging technology by Maxime de Visscher."
+>
+  <SiteNav currentPath="/lab/" />
+
+  <main>
+    <header class="page-hero">
+      <div class="page-hero-inner">
+        <p class="eyebrow">Personal experiments</p>
+        <h1>Lab</h1>
+        <p>Small projects give me room to test an idea before I know whether it is sensible, useful or both.</p>
+      </div>
+    </header>
+
+    <section class="lab lab-page" aria-labelledby="linference-title">
+      <div class="lab-inner reveal">
+        <a class="lab-preview" href="https://linference.be" target="_blank" rel="noopener noreferrer" aria-label="Visit L’Inférence">
+          <img src="/static/img/lab/linference.webp" alt="L’Inférence homepage showing its news layout and illustrated lead story" width="1440" height="900" />
+        </a>
+        <article class="lab-project">
+          <p class="lab-status">AI editorial experiment</p>
+          <h2 id="linference-title">L’Inférence</h2>
+          <p>L’Inférence is a French-language experimental news site where the articles, illustrations and layout are produced through an AI editorial workflow. I built it to learn what AI publishing can and cannot do in practice, not to compete with established media or chase search traffic.</p>
+          <a href="https://linference.be" target="_blank" rel="noopener noreferrer">Visit L’Inférence</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer><div>© 2020–{new Date().getFullYear()} Macoal</div></footer>
+</BaseLayout>

@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+---
+
+<BaseLayout
+  title="Missions | Maxime de Visscher"
+  description="Selected long-term client missions by Maxime de Visscher, Creative Technologist and UX Architect."
+>
+  <SiteNav currentPath="/missions/" />
+
+  <main>
+    <header class="page-hero">
+      <div class="page-hero-inner">
+        <p class="eyebrow">Selected work</p>
+        <h1>Missions</h1>
+        <p>Long-term collaborations where UX, technology and product decisions have to work together.</p>
+      </div>
+    </header>
+
+    <section class="mission-detail" aria-labelledby="mbrella-title">
+      <div class="mission-detail-inner reveal">
+        <div class="mission-heading">
+          <h2 id="mbrella-title" class="visually-hidden">Mbrella</h2>
+          <div class="mission-logo mission-logo--mbrella" aria-hidden="true">
+            <img src="/static/img/missions/mbrella.svg" alt="" width="132" height="37" />
+          </div>
+          <p>Freelance UX Architect<br />June 2021 to present</p>
+        </div>
+        <div class="mission-copy">
+          <p>I joined Mbrella while it was still a startup and have contributed as it grew into a scale-up. My main responsibility is the UX architecture of its mobility-budget platform for HR teams, but the work has never stopped at wireframes. It has included senior front-end development, building the mobile application in React Native and applied AI tools.</p>
+          <p>One example started in the first hours after OpenAI introduced GPT-4o: could it handle mobility documents better than a traditional OCR pipeline? I worked across the hypothesis, technical architecture, prototype, scanner experience and integration. I also created anonymized datasets, test tools and benchmarks to compare extraction quality, response time and cost. The only question that mattered was whether it solved the problem better.</p>
+          <p>I also built Mbrella's first internal MCP server, giving our development and support teams access to the complete API directly from Claude.</p>
+          <a class="external-link" href="https://www.mbrella.eu/" target="_blank" rel="noopener noreferrer">
+            Visit Mbrella
+            <svg aria-hidden="true" viewBox="0 0 16 16">
+              <path d="M5 3h8v8M13 3 4 12" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="mission-detail mission-detail--alternate" aria-labelledby="emakina-title">
+      <div class="mission-detail-inner reveal">
+        <div class="mission-heading">
+          <h2 id="emakina-title" class="visually-hidden">Emakina</h2>
+          <div class="mission-logo mission-logo--emakina" aria-hidden="true">
+            <img src="/static/img/missions/emakina.png" alt="" width="330" height="205" />
+          </div>
+          <p>Technical Presales & New Business<br />Strategist & IT Consultant<br />2006 to 2019</p>
+        </div>
+        <div class="mission-copy">
+          <p>For thirteen years, I worked with Emakina across technical presales, new business pitches, UX and R&D. I supported New Business teams with technical expertise, turning often fuzzy briefs into approaches that could work within the client's budget, functional needs and delivery constraints.</p>
+          <p>During pitches, I brought user-centred ideas into the conversation early. I then made them tangible through user flows, information architecture, wireframes and interface concepts. My role moved between strategy and UX work. I connected business ambitions with the people using the product and the teams building it.</p>
+          <a class="external-link" href="https://www.empathylab.com/" target="_blank" rel="noopener noreferrer">
+            Now Empathy Lab
+            <svg aria-hidden="true" viewBox="0 0 16 16">
+              <path d="M5 3h8v8M13 3 4 12" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div>© 2020–{new Date().getFullYear()} Macoal</div></footer>
+</BaseLayout>
