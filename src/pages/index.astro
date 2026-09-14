@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BusinessIcon from '../components/skills/BusinessIcon.astro';
+import DesignIcon from '../components/skills/DesignIcon.astro';
+import TechnologyIcon from '../components/skills/TechnologyIcon.astro';
+
+const skills = [
+  {
+    title: 'Business',
+    icon: 'business',
+    items: ['Customer Experience', 'Digital Marketing', 'Business Strategy', 'New Biz Development', 'Project Management']
+  },
+  {
+    title: 'Design',
+    icon: 'design',
+    items: ['Information Architecture', 'Wireframing', 'UX Architecture', 'Presentation Design']
+  },
+  {
+    title: 'Technology',
+    icon: 'technology',
+    items: ['Technical Expertise', 'Technology Radar', 'Research & Development', 'Prototyping & POC']
+  }
+];
+
+const technologies = [
+  { title: 'Development stack', logos: [['js', 'JavaScript'], ['ts', 'TypeScript'], ['react', 'React'], ['graphql', 'GraphQL'], ['postgre', 'PostgreSQL'], ['docker', 'Docker']] },
+  { title: 'Cloud services', logos: [['aws', 'Amazon Web Services'], ['heroku', 'Heroku'], ['azure', 'Microsoft Azure']] },
+  { title: 'Prototyping', logos: [['xd', 'Adobe XD'], ['invision', 'InVision'], ['sketch', 'Sketch']] },
+  { title: 'CI/CD & project management', logos: [['github', 'GitHub'], ['gitlab', 'GitLab'], ['jira', 'Atlassian Jira']] }
+];
+
+const sectors = [
+  ['Agencies I worked for', ['DogStudio', 'Emakina']],
+  ['Automotive', ['Audi', 'Interlease', 'Mercedes-Benz']],
+  ['Art, Tourism and Entertainment', ['Dragone', 'Musée d’Orsay', 'Pairi Daiza']],
+  ['FMCG', ['Bongrain', 'Mandarine Napoleon', 'Stassen', 'Vins de Bordeaux']],
+  ['Financial services', ['Axa Bank', 'BCGE', 'Beo Bank', 'BKCP', 'Dutch Bank', 'Keytrade Bank']],
+  ['Industrial and Energy', ['Baxter', 'Engie', 'Ores', 'Services industriels de Genève (SIG)', 'Thomas & Pirons']],
+  ['Institution, Education and Associations', ["Belgium's Chancellery of the Prime Minister", 'CLL', 'Education Above All Fundation', 'European Parliament', 'IHECS Academy']],
+  ['Media', ['BBC Sport', 'IPM', 'Net Events', 'RMB', 'RTBF Auvio']],
+  ['Publishing', ['Casterman', 'Dargaud', 'Dupuis', 'Editions Delagrave', 'J’ai lu', 'Le Lombard']],
+  ['Retail and distribution', ['Cuisine Plus', 'Dufry', 'Eastpak', 'Ixina', 'Levi’s', 'The Phone House']],
+  ['Travel and transportation', ['Aegean', 'De Lijn', 'Europe Assistance', 'OuiBus', 'TEC', 'Thalys', 'Touring Assistance']],
+  ['Telecom', ['Belgacom', 'Join Experience', 'Proximus', 'Orange', 'VOO']]
+] as const;
+---
+
+<BaseLayout
+  title="Maxime de Visscher | Technology Expert & Digital Consultant"
+  description="Maxime de Visscher connects business, design and technology to create useful, memorable digital experiences."
+>
+  <header class="site-nav" data-nav>
+    <div class="nav-inner">
+      <nav aria-label="Primary navigation">
+        <a class="contact-link" href="#contact">Get in touch</a>
+        <a class="social-link" href="https://be.linkedin.com/in/maximedevisscher" aria-label="View Maxime de Visscher on LinkedIn" rel="noopener noreferrer" target="_blank">
+          <img src="/static/img/logos/linkedIn.svg" alt="" width="31" height="32" />
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-photo" role="img" aria-label="Portrait of Maxime de Visscher"></div>
+      <div class="hero-content">
+        <div class="identity">
+          <span class="name">Maxime de Visscher</span>
+          <span class="role">Technology Expert & Digital Consultant</span>
+        </div>
+        <h1>Developing innovative solutions that connect customer experience with business goals <u>is my passion</u>.</h1>
+        <p class="intro">I’m an experienced digital consultant with a broad skill set and a deep understanding of how <strong>business</strong>, <strong>design</strong> and <strong>technology</strong> work together. Over the years, I’ve helped organizations craft solutions that create useful, memorable experiences across their digital ecosystems.</p>
+      </div>
+    </section>
+
+    <section class="skills" aria-label="Areas of expertise">
+      <div class="skills-grid reveal">
+        {skills.map((skill) => (
+          <article class="skill-card">
+            <h2>{skill.title}</h2>
+            <div class={`skill-icon ${skill.icon}`} aria-hidden="true">
+              {skill.icon === 'business' && <BusinessIcon />}
+              {skill.icon === 'design' && <DesignIcon />}
+              {skill.icon === 'technology' && <TechnologyIcon />}
+            </div>
+            <ul>{skill.items.map((item) => <li>{item}</li>)}</ul>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="technologies" aria-label="Tools and technologies">
+      <div class="technology-grid">
+        {technologies.map((group) => (
+          <div class="technology-group">
+            <h2>{group.title}</h2>
+            <div class="logo-list">
+              {group.logos.map(([file, label]) => (
+                <img src={`/static/img/logos/${file}.png`} srcset={`/static/img/logos/${file}@2x.png 2x`} alt={label} title={label} loading="lazy" />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="customers">
+      <div class="customers-inner reveal">
+        <h2>Selected organizations I’ve worked with</h2>
+        <div class="sector-grid">
+          {sectors.map(([title, organizations]) => (
+            <article class="sector">
+              <h3>{title}</h3>
+              <ul>{organizations.map((organization) => <li>{organization}</li>)}</ul>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <div class="contact-photo" role="img" aria-label="Portrait of Maxime de Visscher"></div>
+        <div class="contact-content">
+          <h2>Get in touch</h2>
+          <p>Let’s talk about what you’re building.</p>
+          <a class="email-button" href="mailto:maxime@macoal.com" aria-label="Send Maxime de Visscher an email">Send me an email</a>
+          <div class="socials">
+            <a href="https://github.com/devalnor" target="_blank" aria-label="View Maxime de Visscher on GitHub" rel="noopener noreferrer"><img src="/static/img/logos/github.svg" alt="" width="44" height="44" /></a>
+            <a href="https://be.linkedin.com/in/maximedevisscher" target="_blank" aria-label="View Maxime de Visscher on LinkedIn" rel="noopener noreferrer"><img src="/static/img/logos/linkedIn.svg" alt="" width="44" height="44" /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div>© 2020–{new Date().getFullYear()} Macoal</div></footer>
+
+  <script is:inline>
+    const nav = document.querySelector('[data-nav]');
+    let ticking = false;
+    const updateNav = () => {
+      if (!(nav instanceof HTMLElement)) return;
+      const y = window.scrollY;
+      nav.classList.toggle('is-hidden', y > 50 && y <= 200);
+      nav.classList.toggle('is-fixed', y > 200);
+      nav.style.setProperty('--nav-opacity', String(Math.min(Math.max((y - 400) * 0.002, 0), 1)));
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateNav);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          entry.target.querySelectorAll('.skill-svg').forEach((svg) => svg.classList.add('start'));
+          observer.unobserve(entry.target);
+        }
+      }
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+
+    console.info('%c Hello hacker friend ;)\nIf you want to review the code, be my guest\nhttps://github.com/devalnor/maxime.io/', 'font-size:18px; background-color:#3865FF; color:white');
+  </script>
+</BaseLayout>

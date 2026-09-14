@@ -7,28 +7,18 @@
 
 ## Development
 
-The project pins Node.js 22.13.1 through Volta.
+The project uses Astro 7 and pins Node.js and pnpm through Volta.
 
-* `npm ci`
-* `npm run dev`
-* `npm run lint`
-* `npm run build`
+* `pnpm install`
+* `pnpm dev`
+* `pnpm check`
+* `pnpm build`
 
 ## Tools used
 
-* **Framework**:
-  * [Next.js](https://nextjs.org/)
-* **Styling**:
-  * [styled-components](https://styled-components.com/)
-* **Motion**:
-  * [Motion](https://www.framer.com/motion/)
-* **Responsive**:
-  * [Fresnel](https://github.com/artsy/fresnel)
-* **Others**:
-  * [Font Face Observer](https://fontfaceobserver.com/)
-  * [react-intersection-observer](https://github.com/thebuilder/react-intersection-observer)
-  * [react-obfuscate](https://github.com/coston/react-obfuscate)
-  * [swipe-js-iso](https://www.npmjs.com/package/swipe-js-iso)
+* **Framework**: [Astro](https://astro.build/)
+* **Package manager**: [pnpm](https://pnpm.io/)
+* **Styling and motion**: native CSS
 
   
 ## Contact
