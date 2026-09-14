@@ -1,32 +1,29 @@
 /* eslint-disable import/prefer-default-export */
-import styled from 'styled-components';
-import { motion } from 'framer-motion';
+import styled, { keyframes } from 'styled-components';
 
-export const Container = styled(motion.div)`
+const fadeOut = keyframes`
+  0%, 20% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+`;
+
+export const Container = styled.div`
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
   z-index: 9999;
-  color: white;
   background-color: black;
-`;
+  pointer-events: none;
+  animation: ${fadeOut} 900ms ease-out forwards;
 
-// Motion Framer Default Variants
-Container.defaultProps = {
-  transition: { duration: 2.5 },
-  innitial: 'show',
-  variants: {
-    showed: {
-      opacity: 1,
-      display: 'block'
-    },
-    hidden: {
-      opacity: 0,
-      transitionEnd: {
-        display: 'none'
-      }
-    }
+  @media (prefers-reduced-motion: reduce) {
+    display: none;
   }
-};
+`;
