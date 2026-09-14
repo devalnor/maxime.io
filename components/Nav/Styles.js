@@ -33,8 +33,9 @@ export const Menu = styled.div`
   color: white;
 `;
 
-export const Button = styled.div`
+export const Button = styled.button`
   height: 100%;
+  border: 0;
   cursor: pointer;
   background-color: ${colors.blueFlash};
   display: flex;
@@ -42,6 +43,7 @@ export const Button = styled.div`
   text-align: center;
   align-items: center;
   color: white;
+  font: inherit;
   padding: 16px;
   font-weight: 600;
 

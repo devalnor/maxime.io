@@ -55,9 +55,10 @@ const Nav = () => {
     >
       <Container>
         <Menu>
-          <Button onClick={handleOnClick}>Get In Touch </Button>
+          <Button type="button" onClick={handleOnClick}>Get in touch</Button>
           <a
             href="https://be.linkedin.com/in/maximedevisscher"
+            aria-label="View Maxime de Visscher on LinkedIn"
             rel="noopener noreferrer"
             target="_blank"
           >
