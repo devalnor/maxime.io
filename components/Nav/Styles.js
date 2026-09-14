@@ -7,7 +7,7 @@ import LinkedInLogo from 'public/static/img/logos/linkedIn.svg';
 
 export const Style = styled(motion.div).attrs((props) => ({
   style: {
-    backgroundColor: `rgba(0, 1, 33, ${props.backgroundOpacity || 0})`
+    backgroundColor: `rgba(0, 1, 33, ${props.$backgroundOpacity || 0})`
   }
 }))`
   position: absolute;

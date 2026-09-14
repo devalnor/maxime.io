@@ -48,7 +48,7 @@ const Nav = () => {
 
   return (
     <Style
-      backgroundOpacity={backgroundOpacity}
+      $backgroundOpacity={backgroundOpacity}
       animate={navStatus}
       initial="normal"
       variants={navAnimations}
