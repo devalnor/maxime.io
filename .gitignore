@@ -6,4 +6,10 @@ dist
 .now
 .vscode
 source-assets/
-prototypes/cuivre-rose/assets/portrait.png
+prototypes/
+artifacts/
+artifact/
+.gstack/
+.vercel/
+.DS_Store
+__pycache__/
