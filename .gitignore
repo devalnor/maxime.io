@@ -1,5 +1,15 @@
 node_modules
+.astro
 .next
+dist
 .tmp
 .now
 .vscode
+source-assets/
+prototypes/
+artifacts/
+artifact/
+.gstack/
+.vercel/
+.DS_Store
+__pycache__/

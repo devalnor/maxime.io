@@ -1,0 +1,93 @@
+---
+import ArrowIcon from '../components/ArrowIcon.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+<BaseLayout
+  title="Experience — Maxime de Visscher"
+  description="Professional experience and long-term client collaborations by Maxime de Visscher, Creative Technologist and UX Architect."
+>
+  <SiteNav currentPath="/experience/" />
+  <main id="main" class="subpage-main">
+    <section class="page-hero wrap" aria-labelledby="experience-title">
+      <p class="eyebrow">Professional background</p>
+      <h1 id="experience-title">Experience</h1>
+      <p>
+        Long-term collaborations where UX, technology and product decisions have to work together.
+      </p>
+    </section>
+    <section class="section wrap mission-list" aria-label="Selected experience">
+      <article class="mission">
+        <div class="mission-heading">
+          <h2>Mbrella</h2>
+          <p class="metadata">Freelance UX Architect<br />June 2021 to present</p>
+        </div>
+        <div class="mission-content">
+          <p>
+            I joined Mbrella while it was still a startup and have contributed as it grew into a
+            scale-up. I <strong>shape the UX</strong> of its mobility-budget platform for HR teams and{' '}
+            <strong>build mobile</strong> and <strong>AI tools</strong>. The work extends beyond wireframes to
+            senior front-end development and building the mobile application in React Native.
+          </p>
+          <p>
+            One example started in the first hours after OpenAI introduced GPT-4o: could it handle
+            mobility documents better than a traditional OCR pipeline? I took the idea from{' '}
+            <strong>hypothesis to integration</strong>, working on the technical architecture, prototype and
+            scanner experience, testing whether it <strong>solved the problem better</strong>. I
+            created anonymized datasets, test tools and benchmarks to compare extraction quality,
+            response time and cost.
+          </p>
+          <p>
+            I also <strong>connected our teams to the complete API</strong> by building Mbrella's
+            first internal MCP server, giving development and support teams access{' '}
+            <strong>directly from Claude</strong>.
+          </p>
+          <a
+            class="text-link"
+            href="https://www.mbrella.eu/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Visit Mbrella <ArrowIcon /></a
+          >
+        </div>
+      </article>
+      <article class="mission">
+        <div class="mission-heading">
+          <h2>Emakina</h2>
+          <p class="metadata">
+            Technical Presales &amp; New Business<br />Strategist &amp; IT Consultant<br />2006 to
+            2019
+          </p>
+        </div>
+        <div class="mission-content">
+          <p>
+            For thirteen years, I worked with Emakina across technical presales, new business
+            pitches, UX and R&amp;D. I helped <strong>New Business teams</strong> turn{' '}
+            <strong>fuzzy briefs</strong> into <strong>workable approaches</strong>, bringing technical
+            expertise to balance the client's budget, functional needs and delivery constraints,
+            with <strong>users at the centre</strong>.
+          </p>
+          <p>
+            During pitches, I brought user-centred ideas into the conversation early and made
+            them tangible through user flows, information architecture, wireframes and interface
+            concepts. Moving between strategy and UX work, I connected <strong>business ambitions</strong>{' '}
+            with <strong>the people using the product</strong> and <strong>the teams building it</strong>.
+          </p>
+          <p>
+            I had the opportunity to contribute to projects for clients including Audi, the European
+            Parliament, Musée d’Orsay, Proximus, RTBF Auvio and Thalys.
+          </p>
+          <a
+            class="text-link"
+            href="https://www.empathylab.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Now Empathy Lab <ArrowIcon /></a
+          >
+        </div>
+      </article>
+    </section>
+  </main>
+  <SiteFooter />
+</BaseLayout>

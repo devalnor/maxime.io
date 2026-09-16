@@ -1,0 +1,88 @@
+---
+import ArrowIcon from '../components/ArrowIcon.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+<BaseLayout
+  title="Lab — Maxime de Visscher"
+  description="Independent experiments in AI, IoT and emerging technology by Maxime de Visscher."
+>
+  <SiteNav currentPath="/lab/" />
+  <main id="main" class="subpage-main">
+    <section class="page-hero wrap" aria-labelledby="lab-title">
+      <p class="eyebrow">Personal experiments</p>
+      <h1 id="lab-title">Lab</h1>
+      <p>
+        Small projects give me room to test an idea before I know whether it is sensible, useful or
+        both.
+      </p>
+    </section>
+    <section class="section wrap lab-page" aria-labelledby="linference-title">
+      <div class="lab-layout">
+        <a
+          class="lab-image"
+          href="https://linference.be"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visit L’Inférence"
+          ><img
+            src="/static/img/lab/linference.webp"
+            alt="L’Inférence homepage showing its news layout and illustrated lead story"
+            width="1440"
+            height="900"
+        /></a>
+        <article class="lab-copy">
+          <p class="eyebrow">AI editorial experiment</p>
+          <h2 id="linference-title">L’Inférence</h2>
+          <p>
+            L’Inférence is a French-language experimental news site where the articles,
+            illustrations and layout are produced through an AI editorial workflow. I built it to
+            learn what AI publishing can and cannot do in practice, not to compete with established
+            media or chase search traffic.
+          </p>
+          <a
+            class="text-link"
+            href="https://linference.be"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Visit L’Inférence <ArrowIcon /></a
+          >
+        </article>
+      </div>
+    </section>
+    <section class="section wrap lab-page" aria-labelledby="panpan-title">
+      <div class="lab-layout">
+        <figure class="lab-app-preview">
+          <div class="panpan-window">
+            <img
+              src="/static/img/lab/panpan.png"
+              alt="Panpan desktop app showing a French voice conversation, confirmed actions for Hue lights and Spotify, and a push-to-talk microphone."
+              width="660"
+              height="862"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+        </figure>
+        <article class="lab-copy">
+          <p class="eyebrow">Conversational AI experiment</p>
+          <h2 id="panpan-title">Panpan</h2>
+          <p>
+            Panpan is a personal voice-assistant prototype for Mac. It holds conversations in
+            French, answers aloud, remembers useful context and connects to services such as
+            Hue and Spotify. I can ask it to turn on a light, play some music or tell me about
+            the track that is playing.
+          </p>
+          <p>
+            I use it to explore what makes a voice interface feel natural: how quickly it
+            responds, when it listens, how it handles interruptions and what it remembers
+            between conversations. The work brings together speech recognition, language
+            models, voice synthesis and interaction design.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <SiteFooter />
+</BaseLayout>

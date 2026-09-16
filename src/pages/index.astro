@@ -1,0 +1,184 @@
+---
+import ArrowIcon from '../components/ArrowIcon.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import TechnologyIcon from '../components/skills/TechnologyIcon.astro';
+import DesignIcon from '../components/skills/DesignIcon.astro';
+import BusinessIcon from '../components/skills/BusinessIcon.astro';
+---
+<BaseLayout
+  title="Maxime de Visscher — Creative Technologist & UX Architect"
+  description="Creative Technologist & UX Architect. Design, technology and independent experiments."
+>
+  <div
+    id="portrait-scene"
+    role="img"
+    aria-label="A copper three-dimensional particle portrait forming from a flock of boids"
+  >
+    <canvas id="flock" aria-hidden="true"></canvas>
+  </div>
+  <SiteNav currentPath="/" />
+  <main id="main">
+    <section class="wrap hero" aria-labelledby="intro-title">
+      <figure class="portrait">
+        <div id="portrait-loader" class="portrait-loader" role="status">
+          <span>Loading portrait…</span>
+        </div>
+        <noscript><style is:inline>.portrait-loader { display: none; }</style></noscript>
+      </figure>
+      <div class="hero-copy">
+        <p class="eyebrow">Creative Technologist & UX Architect</p>
+        <h1 id="intro-title">
+          Putting human experience at the heart of technology{' '}
+          <em>is what drives me.</em>
+        </h1>
+        <p class="intro">
+          I am a <strong>senior front-end developer</strong> and <strong>UX architect</strong>. I work
+          between <strong>research</strong>, <strong>interface design</strong> and <strong>code</strong>,
+          especially on problems that do not fit neatly inside one role. I have spent my career{' '}
+          <strong>learning new technologies early</strong>, <strong>testing them in real situations</strong>{' '}
+          and <strong>keeping what proves useful</strong>.
+        </p>
+        <div class="hero-links">
+          <a class="text-link" href="/experience/"
+            >Explore my experience <ArrowIcon /></a
+          ><a class="text-link" href="/lab/">Visit the Lab <ArrowIcon /></a>
+        </div>
+      </div>
+    </section>
+    <section class="expertise" aria-label="Areas of expertise">
+      <div class="expertise-grid">
+        <article class="expertise-card">
+          <h2>Technology</h2>
+          <div class="expertise-icon" aria-hidden="true"><TechnologyIcon /></div>
+          <ul>
+            <li>Senior Front-end Development</li>
+            <li>Mobile Development</li>
+            <li>Prototyping &amp; R&amp;D</li>
+            <li>AI &amp; IoT Exploration</li>
+          </ul>
+        </article>
+        <article class="expertise-card">
+          <h2>Design</h2>
+          <div class="expertise-icon" aria-hidden="true"><DesignIcon /></div>
+          <ul>
+            <li>UX Architecture</li>
+            <li>Information Architecture</li>
+            <li>Interaction Design</li>
+            <li>Training</li>
+          </ul>
+        </article>
+        <article class="expertise-card">
+          <h2>Business</h2>
+          <div class="expertise-icon" aria-hidden="true"><BusinessIcon /></div>
+          <ul>
+            <li>Customer Experience</li>
+            <li>Technical Presales</li>
+            <li>Digital Strategy</li>
+            <li>Client Collaboration</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+    <section id="about" class="section wrap" aria-labelledby="about-title">
+      <div class="about-intro">
+        <h2 id="about-title">From the early web to <span>applied AI</span>.</h2>
+        <p>
+          I started <strong>building for the web in 1999</strong>. Since then, my work has moved through development,
+          technical presales, digital strategy, UX architecture, mobile products and applied AI. The
+          job titles changed because the problems changed. I kept <strong>learning</strong>, <strong>making</strong>{' '}
+          and <strong>connecting disciplines</strong> that are too often handled in isolation.
+        </p>
+      </div>
+      <div class="periods">
+        <div class="timeline-tornado" aria-hidden="true">
+          <canvas id="timeline-boids"></canvas>
+        </div>
+        <article class="period">
+          <time class="period-years">1999–2006</time>
+          <div>
+            <h3>Building for the early web</h3>
+            <p>
+              At B. On The Net &amp; Net Events, I built dynamic websites, content management
+              systems and services for some of Belgium's early online platforms. Those years taught
+              me to <strong>learn by making</strong> and to <strong>understand a digital product</strong>{' '}
+              all the way down to the code.
+            </p>
+          </div>
+        </article>
+        <article class="period">
+          <time class="period-years">2006–2011</time>
+          <div>
+            <h3>Connecting technology and business</h3>
+            <p>
+              Technical presales put me between a client's ambition and the people who had to build
+              it. I learned to <strong>question a brief</strong>, <strong>explain technical choices</strong>{' '}
+              without theatre and <strong>turn an unclear request into something a team could actually make</strong>.
+            </p>
+          </div>
+        </article>
+        <article class="period">
+          <time class="period-years">2011–2019</time>
+          <div>
+            <h3>Designing digital experiences</h3>
+            <p>
+              During thirteen years with Emakina, my work shifted towards information architecture,
+              UX and digital strategy while staying close to technology. I worked across many
+              sectors and small missions, usually where <strong>business goals</strong>, <strong>user needs</strong>{' '}
+              and <strong>implementation constraints</strong> met.
+            </p>
+          </div>
+        </article>
+        <article class="period">
+          <time class="period-years">2021–today</time>
+          <div>
+            <h3>Shaping a product at scale</h3>
+            <p>
+              Since 2021, I have worked with <strong>Mbrella as UX Architect</strong>. It is my most recent long-term
+              client mission and a chance to help <strong>a product</strong>, <strong>a team</strong> and my own practice{' '}
+              <strong>grow together</strong>.
+            </p>
+          </div>
+        </article>
+        <article class="period">
+          <time class="period-years">Ongoing</time>
+          <div>
+            <h3>Exploring what comes next</h3>
+            <p>
+              I keep time for <strong>experiments in AI</strong>, <strong>IoT</strong> and whatever else looks promising enough to
+              test. Some become <strong>useful product ideas</strong>. Others simply teach me <strong>where the technology still falls short</strong>.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section id="contact" class="contact wrap" aria-labelledby="contact-title">
+      <div class="contact-inner">
+        <div class="contact-main">
+          <h2 id="contact-title">Let’s talk.</h2>
+          <p>
+            If you care about how technology is made and used, we will probably have something to
+            talk about.
+          </p>
+          <a class="contact-cta" href="mailto:maxime@macoal.com?subject=Let%E2%80%99s%20talk"
+            >Start a conversation <ArrowIcon /></a
+          >
+          <div class="contact-secondary">
+            <a
+              href="https://be.linkedin.com/in/maximedevisscher"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn <ArrowIcon /></a
+            ><a href="https://github.com/devalnor" target="_blank" rel="noopener noreferrer"
+              >GitHub <ArrowIcon /></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <SiteFooter home />
+  <script is:inline type="module" src="/static/portrait/script.js"></script>
+  <script is:inline type="module" src="/static/portrait/timeline.js"></script>
+</BaseLayout>
