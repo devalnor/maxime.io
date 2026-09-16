@@ -24,6 +24,23 @@
 * {
   box-sizing: border-box;
 }
+/* Native page navigation keeps each page's scripts and history lifecycle intact. */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 220ms;
+  animation-timing-function: ease-in-out;
+}
+/* Keep the name and navigation sharp while the page content crossfades. */
+::view-transition-group(site-header),
+::view-transition-new(site-header) {
+  animation: none;
+}
+::view-transition-old(site-header) {
+  display: none;
+}
 html {
   /* Keep the layout width constant on both short and scrolling pages. */
   scrollbar-gutter: stable;
@@ -78,6 +95,7 @@ summary:focus-visible {
   margin: auto;
 }
 .site-header {
+  view-transition-name: site-header;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -714,6 +732,9 @@ footer {
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
   html {
     scroll-behavior: auto;
   }
@@ -1243,8 +1264,8 @@ nav a[aria-current='page'] {
 .mission-list {
   padding-top: 36px;
 }
-.mission-list .mission:last-child {
-  border-bottom: 1px solid var(--line);
+.mission-list .mission:first-child {
+  border-top: 0;
 }
 .mission-list .mission h2 {
   font-size: clamp(32px, 3.5vw, 48px);
@@ -1256,6 +1277,12 @@ nav a[aria-current='page'] {
 }
 .mission-list .mission-content > p {
   color: var(--muted);
+}
+.mission-list .mission-content strong,
+#about p strong,
+.hero .intro strong {
+  color: var(--text);
+  font-weight: 600;
 }
 .lab-page {
   border-bottom: 0;

@@ -4,7 +4,7 @@ interface Props {
 }
 const { currentPath = '/' } = Astro.props;
 const home = currentPath === '/';
-const pageLabel = currentPath === '/lab/' ? 'lab' : currentPath === '/experience/' ? 'experience' : null;
+const pageLabel = currentPath === '/lab/' ? 'Lab' : currentPath === '/experience/' ? 'Experience' : null;
 ---
 <a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
