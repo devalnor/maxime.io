@@ -580,25 +580,30 @@ footer {
     width: calc(100% - 40px);
   }
   .header-inner {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 8px;
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
     padding-block: 8px;
   }
   .brand {
-    font-size: 25px;
+    font-size: clamp(18px, 5.5vw, 22px);
+    white-space: nowrap;
   }
   .brand-page {
     display: none;
   }
   nav {
-    width: 100%;
-    justify-content: flex-start;
-    font-size: 14px;
-    gap: 24px;
+    width: auto;
+    flex-shrink: 0;
+    justify-content: flex-end;
+    font-size: clamp(12px, 3.3vw, 14px);
+    gap: 12px;
+  }
+  .nav-contact {
+    display: none;
   }
   .nav-contact::before {
-    left: -12px;
+    display: none;
   }
   .hero {
     display: flex;
