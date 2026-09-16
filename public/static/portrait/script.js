@@ -2,6 +2,11 @@ import { settings } from './portrait-settings.mjs';
 import { PortraitFlock } from './flocking.mjs';
 const root = document.documentElement;
 const host = document.querySelector('#portrait-scene');
+let loader = document.querySelector('#portrait-loader');
+function dismissLoader() {
+  loader?.remove();
+  loader = null;
+}
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 const skillSvgs = [...document.querySelectorAll('.expertise .skill-svg')];
 if (skillSvgs.length) {
@@ -60,6 +65,16 @@ function paint() {
     viewport();
     syncBoidLayers();
     renderer.render(scene, camera);
+    if (loader && portraitVisible) {
+      let opacity = 0;
+      let samples = 0;
+      for (let i = 0; i < flock.count; i += 32) {
+        opacity += flock.opacity[i];
+        samples++;
+      }
+      // Wait for visible particles, not merely a completed network request.
+      if (opacity / samples >= 0.18) dismissLoader();
+    }
   }
 }
 function makeBoidLayer(source, owner, isPortrait = false) {
@@ -496,6 +511,7 @@ async function init() {
         available = false;
         cancelAnimationFrame(frame);
         root.dataset.sceneStatus = 'context-lost';
+        dismissLoader();
         const notice = document.querySelector('#tuner-status');
         if (notice)
           notice.textContent = 'Rendu 3D interrompu. Recharge la page.';
@@ -507,6 +523,7 @@ async function init() {
     available = false;
     root.dataset.sceneStatus = 'unavailable';
     root.classList.add('scene-unavailable');
+    dismissLoader();
   }
 }
 init();

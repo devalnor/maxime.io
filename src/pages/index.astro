@@ -20,7 +20,12 @@ import BusinessIcon from '../components/skills/BusinessIcon.astro';
   <SiteNav currentPath="/" />
   <main id="main">
     <section class="wrap hero" aria-labelledby="intro-title">
-      <figure class="portrait"></figure>
+      <figure class="portrait">
+        <div id="portrait-loader" class="portrait-loader" role="status">
+          <span>Loading portrait…</span>
+        </div>
+        <noscript><style is:inline>.portrait-loader { display: none; }</style></noscript>
+      </figure>
       <div class="hero-copy">
         <p class="eyebrow">Creative Technologist & UX Architect</p>
         <h1 id="intro-title">
