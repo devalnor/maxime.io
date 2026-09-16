@@ -26,7 +26,7 @@ pnpm preview  # Preview the production build locally
 | --- | --- |
 | `src/pages/` | Home, Experience and Lab |
 | `src/components/` | Navigation, footer, Lucide arrows and animated skill icons |
-| `src/layouts/` | Shared HTML, metadata, structured data and analytics |
+| `src/layouts/` | Shared HTML, metadata and structured data |
 | `src/styles/` | Site styles, responsive layouts and page transitions |
 | `public/` | Published images, fonts, robots.txt and sitemap |
 | `public/static/portrait/` | Particle portrait, timeline tornado, point data and vendored Three.js |
