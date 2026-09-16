@@ -22,9 +22,17 @@ The project uses Astro 7 and pins Node.js and pnpm through Volta.
 
 The Astro pages implement the approved `prototypes/cuivre-rose` mockup. Shared
 navigation and footer live in `src/components`, with styles in
-`src/styles/global.css`. The portrait modules, image and vendored Three.js
+`src/styles/global.css`. The portrait modules, precomputed point data and vendored Three.js
 (including its license) live in `public/static/portrait`; its production defaults
 are in `portrait-settings.mjs`. The tuning panel remains in the prototype.
+
+Portrait source images stay locally in the ignored `source-assets/portrait/`
+directory. To regenerate the committed runtime data, install Pillow locally
+(`python3 -m pip install Pillow`) and run `python3 scripts/precompute-portrait.py`.
+Normal builds need only the generated `portrait-mobile.bin` and
+`portrait-desktop.bin`; no image decoding or sampling happens in the browser.
+`.vercelignore` also excludes source assets, prototypes and local artifacts from
+deployment uploads. This does not remove files from old Git history or deployments.
 
   
 ## Contact

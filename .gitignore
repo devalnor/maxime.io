@@ -5,3 +5,5 @@ dist
 .tmp
 .now
 .vscode
+source-assets/
+prototypes/cuivre-rose/assets/portrait.png

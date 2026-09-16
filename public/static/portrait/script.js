@@ -352,53 +352,23 @@ function tick(now) {
   frame = requestAnimationFrame(tick);
 }
 async function loadPortrait() {
-  // The approved artwork supplies point locations and luminosity only.
-  // No raster texture, image plane or billboard is sent to WebGL.
-  const image = new Image();
-  image.src = new URL('./assets/portrait.png', import.meta.url).href;
-  await image.decode();
-  const sampler = document.createElement('canvas');
-  sampler.width = 420;
-  sampler.height = 420;
-  const c = sampler.getContext('2d', { willReadFrequently: true });
-  c.drawImage(image, 0, 0, 420, 420);
-  const data = c.getImageData(0, 0, 420, 420).data,
-    candidates = [];
-  let seed = 7349;
-  const rand = () => (seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296;
-  for (let y = 6; y < 414; y++)
-    for (let x = 6; x < 414; x++) {
-      const k = (y * 420 + x) * 4,
-        luma = (data[k] * 0.5 + data[k + 1] * 0.35 + data[k + 2] * 0.15) / 255;
-      if (luma > 0.08 && rand() < Math.pow(luma, 0.65) * 0.7)
-        candidates.push([x / 420, y / 420, luma]);
-    }
-  for (let i = candidates.length - 1; i > 0; i--) {
-    const j = Math.floor(rand() * (i + 1));
-    [candidates[i], candidates[j]] = [candidates[j], candidates[i]];
-  }
-  const n = Math.min(innerWidth < 700 ? 6500 : 11500, candidates.length);
-  baseTargets = new Float32Array(n * 3);
-  levels = new Float32Array(n);
-  sizes = new Float32Array(n);
-  for (let i = 0; i < n; i++) {
-    const [x, y, luma] = candidates[i],
-      k = i * 3;
-    // A shallow facial relief, not a claimed anatomical scan. Nose/cheek
-    // volumes supply real depth so flying particles can pass in front/behind.
-    const ex = (x - 0.66) / 0.34,
-      ey = (y - 0.51) / 0.48;
-    const shell = Math.sqrt(Math.max(0, 1 - ex * ex - ey * ey)) * 0.14;
-    const nose =
-      0.065 * Math.exp(-((x - 0.69) ** 2 / 0.002 + (y - 0.54) ** 2 / 0.011));
-    baseTargets[k] = x;
-    baseTargets[k + 1] = y;
-    baseTargets[k + 2] = shell + nose + (luma - 0.4) * 0.018;
-    levels[i] = 0.35 + luma * 0.65;
-    sizes[i] = 0.8 + rand() * 0.8 + luma * 0.35;
-  }
-  return rand;
+  const variant = innerWidth < 700 ? 'mobile' : 'desktop';
+  const response = await fetch(new URL(`./assets/portrait-${variant}.bin`, import.meta.url));
+  if (!response.ok) throw new Error(`Portrait data: HTTP ${response.status}`);
+  const buffer = await response.arrayBuffer();
+  const header = new DataView(buffer);
+  if (buffer.byteLength < 12 || header.getUint32(0, true) !== 0x314c4650)
+    throw new Error('Invalid portrait data');
+  const count = header.getUint32(4, true);
+  if (!count || count > 11500 || buffer.byteLength !== 12 + count * 20)
+    throw new Error('Invalid portrait point count');
+  let seed = header.getUint32(8, true);
+  baseTargets = new Float32Array(buffer, 12, count * 3);
+  levels = new Float32Array(buffer, 12 + count * 12, count);
+  sizes = new Float32Array(buffer, 12 + count * 16, count);
+  return () => (seed = (seed * 1664525 + 1013904223) >>> 0) / 4294967296;
 }
+
 async function init() {
   try {
     THREE = await import('./assets/vendor/three.module.min.js');
