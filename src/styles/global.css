@@ -114,6 +114,7 @@ summary:focus-visible {
   display: flex;
   align-items: baseline;
   gap: 10px;
+  white-space: nowrap;
 }
 .brand-page {
   color: var(--accent);
@@ -129,8 +130,10 @@ summary:focus-visible {
 }
 nav {
   display: flex;
+  flex-shrink: 0;
   gap: 32px;
   font-size: 16px;
+  white-space: nowrap;
 }
 nav a:last-child {
   color: var(--accent);
@@ -586,6 +589,16 @@ footer {
   .wrap {
     width: calc(100% - 56px);
   }
+  .header-inner {
+    gap: 20px;
+  }
+  .brand-lockup {
+    gap: 8px;
+  }
+  .brand,
+  .brand-page {
+    font-size: 22px;
+  }
   .hero {
     gap: 2%;
     min-height: 650px;
@@ -597,10 +610,11 @@ footer {
     font-size: 34px;
   }
   nav {
-    gap: 20px;
+    gap: 16px;
+    font-size: 14px;
   }
   .nav-contact::before {
-    left: -10px;
+    left: -8px;
   }
   .expertise-row {
     grid-template-columns: 1fr 1.2fr;

@@ -77,5 +77,6 @@ it to render the portrait.
 
 - Three.js: `public/static/portrait/assets/vendor/LICENSE.three`
 - Lucide / Feather icons: `public/static/licenses/lucide.txt`
+- PT Mono: `public/static/licenses/pt-mono.txt`
 
 Copyright © 2020–2026 Macoal.

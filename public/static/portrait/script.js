@@ -234,6 +234,7 @@ function assemblyAt(t) {
   return 0.42 + 0.18 * Math.sin(t * 0.22);
 }
 function updateStatus() {
+  if (!available) return;
   root.dataset.sceneStatus = paused ? 'paused' : 'running';
 }
 function sync() {
@@ -512,9 +513,14 @@ async function init() {
         cancelAnimationFrame(frame);
         root.dataset.sceneStatus = 'context-lost';
         dismissLoader();
-        const notice = document.querySelector('#tuner-status');
-        if (notice)
-          notice.textContent = 'Rendu 3D interrompu. Recharge la page.';
+      });
+    document
+      .querySelector('#flock')
+      .addEventListener('webglcontextrestored', () => {
+        available = true;
+        pointer.active = false;
+        resize();
+        sync();
       });
 
     sync();
