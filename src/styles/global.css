@@ -1099,9 +1099,6 @@ body {
 }
 
 /* Full-width career introduction and vertical timeline. */
-#about {
-  width: min(1190px, calc(100% - 100px));
-}
 .about-intro {
   display: grid;
   width: 100%;
