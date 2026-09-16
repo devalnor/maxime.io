@@ -31,7 +31,6 @@ pnpm preview  # Preview the production build locally
 | `public/` | Published images, fonts, robots.txt and sitemap |
 | `public/static/portrait/` | Particle portrait, timeline tornado, point data and vendored Three.js |
 | `scripts/` | Local portrait data generation |
-| `docs/` | Content references and design notes |
 
 `astro.config.mjs` sets the canonical site URL and redirects `/missions` to
 `/experience/`. Update `public/sitemap.xml` when adding or renaming pages.
