@@ -1,15 +1,7 @@
 @font-face {
   font-family: Montreal;
-  src: url('/static/fonts/montreal.woff') format('woff');
+  src: url('../../public/static/fonts/montreal.woff') format('woff');
   font-display: swap;
-}
-@font-face {
-  font-family: 'Montserrat Light';
-  src: url('typeface-montserrat/files/montserrat-latin-300.woff2') format('woff2');
-  font-style: normal;
-  font-weight: 300;
-  /* The header font is preloaded; avoid flashing a different wordmark first. */
-  font-display: block;
 }
 :root {
   --h: 12;
@@ -28,7 +20,7 @@ html {
   /* Keep the layout width constant on both short and scrolling pages. */
   scrollbar-gutter: stable;
   scroll-behavior: smooth;
-  scroll-padding-top: 100px;
+  scroll-padding-top: 110px;
 }
 body {
   margin: 0;
@@ -77,12 +69,7 @@ summary:focus-visible {
   width: min(1320px, calc(100% - 100px));
   margin: auto;
 }
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  height: 80px;
-  background: var(--bg);
+header {
   border-bottom: 1px solid var(--line);
 }
 .header-inner {
@@ -90,24 +77,19 @@ summary:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: 32px;
-  height: 100%;
+  min-height: 122px;
 }
-.brand-lockup {
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-}
-.brand-page {
-  color: var(--accent);
-  white-space: nowrap;
-}
-.brand,
-.brand-page {
-  font-family: 'Montserrat Light', Montreal, sans-serif;
-  font-size: 27px;
-  font-weight: 300;
-  letter-spacing: -0.04em;
+.brand {
+  font-size: 29px;
+  letter-spacing: -0.035em;
   line-height: 1.15;
+}
+.brand small {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-top: 10px;
 }
 nav {
   display: flex;
@@ -116,19 +98,6 @@ nav {
 }
 nav a:last-child {
   color: var(--accent);
-}
-.nav-contact {
-  position: relative;
-}
-.nav-contact::before {
-  position: absolute;
-  top: 50%;
-  left: -16px;
-  width: 1px;
-  height: 18px;
-  background: var(--line);
-  content: '';
-  transform: translateY(-50%);
 }
 .hero {
   position: relative;
@@ -534,9 +503,6 @@ footer {
   nav {
     gap: 20px;
   }
-  .nav-contact::before {
-    left: -10px;
-  }
   .expertise-row {
     grid-template-columns: 1fr 1.2fr;
   }
@@ -558,29 +524,29 @@ footer {
   }
 }
 @media (max-width: 680px) {
+  html {
+    scroll-padding-top: 24px;
+  }
   .wrap {
     width: calc(100% - 40px);
   }
   .header-inner {
     align-items: flex-start;
     flex-direction: column;
-    gap: 8px;
-    padding-block: 8px;
+    gap: 24px;
+    padding-block: 24px;
   }
   .brand {
     font-size: 25px;
   }
-  .brand-page {
+  .brand small {
     display: none;
   }
   nav {
     width: 100%;
-    justify-content: flex-start;
+    justify-content: space-between;
     font-size: 14px;
-    gap: 24px;
-  }
-  .nav-contact::before {
-    left: -12px;
+    gap: 12px;
   }
   .hero {
     display: flex;
@@ -785,6 +751,10 @@ footer {
   display: block;
   width: 100%;
   height: 100%;
+}
+.brand {
+  font-size: 27px;
+  letter-spacing: -0.04em;
 }
 .scene-unavailable #scene-status {
   max-width: 260px;
@@ -1217,7 +1187,7 @@ nav a[aria-current='page'] {
   color: var(--accent);
 }
 .subpage-main {
-  min-height: calc(100vh - 153px);
+  min-height: calc(100vh - 195px);
 }
 .page-hero {
   padding-block: 105px 90px;
@@ -1227,18 +1197,18 @@ nav a[aria-current='page'] {
   margin-bottom: 22px;
 }
 .page-hero h1 {
-  font-size: clamp(40px, 4.5vw, 64px);
+  font-size: clamp(58px, 9vw, 132px);
   font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -0.04em;
-  margin: 0 0 24px;
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+  margin: 0 0 38px;
   color: var(--accent);
 }
 .page-hero > p:last-child {
   max-width: 720px;
   color: var(--muted);
-  font-size: clamp(18px, 1.6vw, 22px);
-  line-height: 1.6;
+  font-size: clamp(20px, 2.2vw, 30px);
+  line-height: 1.45;
 }
 .mission-list {
   padding-top: 36px;
@@ -1260,33 +1230,6 @@ nav a[aria-current='page'] {
 .lab-page {
   border-bottom: 0;
 }
-.lab-page + .lab-page {
-  border-top: 1px solid var(--line);
-}
-.lab-app-preview {
-  display: flex;
-  justify-content: center;
-  margin: 0;
-  padding: 24px;
-}
-.panpan-window {
-  position: relative;
-  width: min(100%, 400px);
-  aspect-ratio: 582 / 796;
-  overflow: hidden;
-  border-radius: 2% / 1.5%;
-  box-shadow: 0 16px 40px rgb(0 0 0 / 30%), 0 4px 12px rgb(0 0 0 / 18%);
-}
-.panpan-window img {
-  /* Original 660 × 862 capture; window bounds: (33, 22)–(615, 818). */
-  position: absolute;
-  display: block;
-  width: calc(100% * 660 / 582);
-  max-width: none;
-  height: auto;
-  left: calc(-100% * 33 / 582);
-  top: calc(-100% * 22 / 796);
-}
 .lab-page .lab-copy h2 {
   font-weight: 400;
   font-size: clamp(36px, 4.3vw, 62px);
@@ -1299,11 +1242,11 @@ nav a[aria-current='page'] {
     padding-block: 65px 55px;
   }
   .page-hero h1 {
-    font-size: clamp(32px, 8vw, 40px);
-    margin-bottom: 20px;
+    font-size: 64px;
+    margin-bottom: 28px;
   }
   .page-hero > p:last-child {
-    font-size: 18px;
+    font-size: 19px;
   }
   .mission-list {
     padding-top: 20px;

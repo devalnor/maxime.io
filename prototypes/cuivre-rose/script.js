@@ -3,6 +3,14 @@ import { PortraitFlock } from './flocking.mjs?v=varied-entry-22';
 const root=document.documentElement, motion=document.querySelector('#motion');
 const host=document.querySelector('#portrait-scene');
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+const skillSvgs=[...document.querySelectorAll('.expertise .skill-svg')];
+if(skillSvgs.length){
+  const revealSkills=()=>skillSvgs.forEach(svg=>svg.classList.add('start'));
+  if(reduced.matches)revealSkills();
+  else new IntersectionObserver((entries,observer)=>{
+    if(entries.some(entry=>entry.isIntersecting)){revealSkills();observer.disconnect();}
+  },{threshold:.25}).observe(document.querySelector('.expertise'));
+}
 let hue=12, paused=reduced.matches, available=false, visible=true, frame=0, last=0, elapsed=0;
 let renderer, scene, camera, flock, geometry, material, points, THREE, boidMaterial;
 const boidLayers=[];

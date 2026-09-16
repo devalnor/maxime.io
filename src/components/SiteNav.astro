@@ -2,27 +2,21 @@
 interface Props {
   currentPath?: string;
 }
-
 const { currentPath = '/' } = Astro.props;
-const contactHref = currentPath === '/' ? '#contact' : '/#contact';
-const links = [
-  ['/', 'Home'],
-  ['/missions/', 'Missions'],
-  ['/lab/', 'Lab']
-] as const;
+const home = currentPath === '/';
+const pageLabel = currentPath === '/lab/' ? 'lab' : currentPath === '/experience/' ? 'experience' : null;
 ---
-
-<header class="site-nav">
-  <div class="nav-inner">
-    <a class="site-brand" href="/">Maxime de Visscher</a>
-    <nav aria-label="Primary navigation">
-      {links.map(([href, label]) => (
-        <a class="nav-link" href={href} aria-current={currentPath === href ? 'page' : undefined}>{label}</a>
-      ))}
-      <a class="contact-link" href={contactHref}>Get in touch</a>
-      <a class="social-link" href="https://be.linkedin.com/in/maximedevisscher" aria-label="View Maxime de Visscher on LinkedIn" rel="noopener noreferrer" target="_blank">
-        <img src="/static/img/logos/linkedIn.svg" alt="" width="31" height="32" />
-      </a>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <div class="brand-lockup">
+      <a class="brand" href={home ? '#main' : '/'}>Maxime de Visscher</a>
+      {pageLabel && <span class="brand-page">/ {pageLabel}</span>}
+    </div>
+    <nav aria-label="Main navigation">
+      <a href="/experience/" aria-current={currentPath === '/experience/' ? 'page' : undefined}>Experience</a>
+      <a href="/lab/" aria-current={currentPath === '/lab/' ? 'page' : undefined}>Lab</a>
+      <a class="nav-contact" href={home ? '#contact' : '/#contact'}>Get in touch ↗</a>
     </nav>
   </div>
 </header>

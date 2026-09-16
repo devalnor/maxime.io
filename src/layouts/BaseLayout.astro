@@ -1,24 +1,23 @@
 ---
 import '../styles/global.css';
-import 'typeface-montserrat/index.css';
+import brandFontURL from 'typeface-montserrat/files/montserrat-latin-300.woff2?url';
 
 interface Props {
   title: string;
   description: string;
-  introFade?: boolean;
 }
 
-const { title, description, introFade = false } = Astro.props;
+const { title, description } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const personId = 'https://maxime.io/#person';
-const pageId = 'https://maxime.io/#profile';
+const pageId = `${canonicalURL}#page`;
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
     {
-      '@type': 'ProfilePage',
+      '@type': Astro.url.pathname === '/' ? 'ProfilePage' : 'WebPage',
       '@id': pageId,
-      url: 'https://maxime.io/',
+      url: canonicalURL.href,
       name: title,
       description,
       inLanguage: 'en',
@@ -53,51 +52,25 @@ const structuredData = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="color-scheme" content="light" />
+    <meta name="color-scheme" content="dark" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
+    <link rel="preload" href={brandFontURL} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/static/fonts/montreal.woff" as="font" type="font/woff" crossorigin />
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://maxime.io/" />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content="https://maxime.io/static/img/opengraph-1200x630.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <script is:inline>document.documentElement.classList.add('js');</script>
-    {introFade && (
-      <script is:inline>
-        try {
-          if (!sessionStorage.getItem('maxime-home-intro-seen')) {
-            document.documentElement.classList.add('show-intro-fade');
-            sessionStorage.setItem('maxime-home-intro-seen', 'true');
-          }
-        } catch {
-          document.documentElement.classList.add('show-intro-fade');
-        }
-      </script>
-    )}
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
     <script is:inline async defer data-website-id="99b8581d-9792-4bcc-86a8-000c9ddfe628" src="https://umami.macoal.com/umami.js"></script>
     <title>{title}</title>
   </head>
   <body>
-    {introFade && <div class="load-screen" aria-hidden="true"></div>}
     <slot />
-    <script is:inline>
-      const observer = new IntersectionObserver((entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            entry.target.querySelectorAll('.skill-svg').forEach((svg) => svg.classList.add('start'));
-            observer.unobserve(entry.target);
-          }
-        }
-      }, { threshold: 0.12 });
-      document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
-
-      console.info('%c Hello hacker friend ;)\nIf you want to review the code, be my guest\nhttps://github.com/devalnor/maxime.io/', 'font-size:18px; background-color:#3865FF; color:white');
-    </script>
   </body>
 </html>

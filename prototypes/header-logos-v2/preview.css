@@ -1,0 +1,15 @@
+.identity-link { display:block; flex-shrink:0; color:var(--text); }
+.identity-link:hover { color:var(--text); }
+.identity { display:block; width:100%; height:auto; overflow:visible; }
+.identity-link.bloc { width:170px; }
+.identity-link.ligne { width:262px; }
+.hero { min-height:0; padding-block:50px; }
+.portrait { aspect-ratio:1.12; }
+.portrait img { width:110%; height:115%; left:-10%; top:-8%; }
+@media(max-width:680px) {
+ .identity-link.ligne { width:248px; max-width:100%; }
+ .header-inner { gap:25px; }
+ .hero { padding-top:20px; }
+ .portrait { width:100%; aspect-ratio:1.08; }
+ .portrait img { width:104%; height:112%; right:0; left:auto; top:-5%; }
+}

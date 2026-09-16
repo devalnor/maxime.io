@@ -18,7 +18,13 @@ The project uses Astro 7 and pins Node.js and pnpm through Volta.
 
 * **Framework**: [Astro](https://astro.build/)
 * **Package manager**: [pnpm](https://pnpm.io/)
-* **Styling and motion**: native CSS
+* **Styling and motion**: native CSS and a local Three.js particle portrait
+
+The Astro pages implement the approved `prototypes/cuivre-rose` mockup. Shared
+navigation and footer live in `src/components`, with styles in
+`src/styles/global.css`. The portrait modules, image and vendored Three.js
+(including its license) live in `public/static/portrait`; its production defaults
+are in `portrait-settings.mjs`. The tuning panel remains in the prototype.
 
   
 ## Contact

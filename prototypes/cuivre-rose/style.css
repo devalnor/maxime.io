@@ -13,6 +13,73 @@ body{isolation:isolate}#portrait-scene{position:fixed;inset:0;width:100%;height:
 @media(max-width:680px){.boid-accent,#contact-flock{width:100%;height:92px;margin:-5px 0 24px}#portrait-scene{inset:0}}
 /* Document-attached canvas: the art scrolls naturally with its sections. */
 body{position:relative}#portrait-scene{position:absolute;top:0;right:0;bottom:0;left:0;height:100%;width:100%;overflow:hidden}#portrait-scene canvas{height:100%;width:100%}
+/* Three-column expertise grid, adapted from the existing site design. */
+.expertise{display:flex;justify-content:center;padding-block:0}
+.expertise-grid{display:grid;width:min(1320px,calc(100% - 100px));grid-template-columns:repeat(3,minmax(0,1fr))}
+.expertise-card{position:relative;min-width:0;padding:80px 30px 42px;text-align:center}
+.expertise-card::before{position:absolute;top:0;left:50%;width:1px;height:50px;background:var(--line);content:''}
+.expertise-card:not(:last-child)::after{position:absolute;top:50px;left:50%;width:100%;height:1px;background:var(--line);content:''}
+.expertise .expertise-card h2{font-size:clamp(34px,3.25vw,48px);margin:0 0 30px}
+.expertise-icon{display:flex;height:140px;align-items:center;justify-content:center}
+.expertise-icon .skill-svg{display:block;width:min(100%,304px);max-height:110px;overflow:visible}
+.expertise .expertise-card ul{display:block;margin:36px 0 0;font-size:15px;line-height:1.85}
+.expertise .expertise-card li{margin:3px 0}
+.expertise .business_cls-1,.expertise .design_cls-1,.expertise .techno_cls-1{fill:var(--bg);stroke:var(--accent)}
+.expertise .business_cls-2,.expertise .design_cls-2,.expertise .techno_cls-2{fill:var(--surface);stroke:var(--accent)}
+.expertise .design_cls-3,.expertise .design_cls-4{fill:none;stroke:var(--accent)}
+.expertise .techno_cls-3,.expertise .techno_cls-5{fill:var(--accent)}
+.expertise .techno_cls-4{fill:var(--text)}
+@media(max-width:1000px){.expertise-grid{width:calc(100% - 56px)}}
+@media(max-width:800px){.expertise-grid{grid-template-columns:1fr}.expertise-card{padding:45px 20px 30px}.expertise-card::before,.expertise-card::after{display:none}.expertise-card:not(:first-child){border-top:1px solid var(--line)}.expertise-icon{height:120px}.expertise .expertise-card h2{margin-bottom:20px}.expertise .expertise-card ul{margin-top:20px}}
+@media(max-width:680px){.expertise-grid{width:calc(100% - 40px)}}
+@media(prefers-reduced-motion:reduce){.skill-svg *{animation:none!important;stroke-dashoffset:0!important;visibility:visible!important}}
+
+/* Full-width career introduction and vertical timeline. */
+#about{width:min(1190px,calc(100% - 100px))}
+.about-intro{display:grid;width:100%;grid-template-columns:repeat(3,minmax(0,1fr))}
+.section .about-intro h2{align-self:start;min-width:0;max-width:100%;font-size:clamp(34px,3.25vw,48px);line-height:1.2;margin:0;color:var(--accent)}
+.section .about-intro h2 span{color:var(--text)}
+.about-intro>p{grid-column:2/4;max-width:790px;padding-inline:30px;color:var(--muted);font-size:20px;line-height:1.75}
+.periods{position:relative;display:grid;width:100%;margin-top:70px;grid-template-columns:minmax(0,1fr)}
+.periods::before{position:absolute;top:8px;bottom:8px;left:112px;width:1px;background:var(--line);content:'';transform:translateX(-50%)}
+.periods .period{position:relative;display:block;border:0;padding:0 0 48px 147px}
+.periods .period:last-child{padding-bottom:0}
+.periods .period::before{position:absolute;top:4px;left:112px;z-index:1;width:15px;height:15px;border:4px solid var(--bg);border-radius:50%;background:var(--accent);box-shadow:0 0 0 1px var(--accent);content:'';transform:translateX(-50%)}
+.periods .period-years{position:absolute;top:0;left:0;display:flex;width:86px;height:23px;align-items:center;justify-content:flex-end;padding-top:6px;color:var(--accent);font-size:14px;font-weight:400;letter-spacing:.025em;line-height:1;text-align:right;white-space:nowrap}
+.periods .period h3{font-size:25px;margin:0 0 12px}
+.periods .period p{max-width:790px;margin:0}
+@media(max-width:1000px){#about{width:calc(100% - 56px)}}
+@media(max-width:800px){.about-intro{display:block}.section .about-intro h2{padding:0;margin-bottom:28px;text-align:left}.about-intro>p{padding:0}}
+@media(max-width:680px){#about{width:calc(100% - 40px)}.about-intro{display:block}.section .about-intro h2{padding:0;font-size:48px;margin-bottom:28px;text-align:left}.about-intro>p{padding:0;font-size:17px}.periods{margin-top:50px}.periods::before{left:72px}.periods .period{padding:0 0 40px 100px}.periods .period::before{left:72px}.periods .period-years{top:0;width:54px;font-size:12px}.periods .period h3{font-size:23px}}
+
+/* Framed role label in the home hero. */
+.hero-copy>.eyebrow{width:fit-content;padding:7px 12px;background:var(--accent);color:var(--bg);line-height:1.35}
+
+/* Direct, intent-led contact actions. */
+.contact .contact-inner{display:block}
+.contact-main{max-width:760px;margin-inline:auto;text-align:center}
+.contact-main>p{margin-inline:auto}
+.contact-cta{display:inline-flex;align-items:center;gap:30px;margin-top:12px;padding:14px 18px;background:var(--accent);color:var(--bg);font-size:17px;transition:transform .2s ease,background .3s ease}
+.contact-cta:hover{color:var(--bg);transform:translateY(-2px)}
+.contact-secondary{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px 22px;margin-top:28px;font-size:14px;color:var(--muted)}
+.contact-secondary a:hover{color:var(--accent)}
+@media(max-width:680px){.contact-cta{width:100%;justify-content:space-between}.contact-secondary{gap:12px 20px}}
+
+/* Standalone Missions and Lab pages. */
+nav a[aria-current=page]{color:var(--accent)}
+.subpage-main{min-height:calc(100vh - 195px)}
+.page-hero{padding-block:105px 90px;border-bottom:1px solid var(--line)}
+.page-hero .eyebrow{margin-bottom:22px}
+.page-hero h1{font-size:clamp(58px,9vw,132px);font-weight:400;line-height:.9;letter-spacing:-.055em;margin:0 0 38px;color:var(--accent)}
+.page-hero>p:last-child{max-width:720px;color:var(--muted);font-size:clamp(20px,2.2vw,30px);line-height:1.45}
+.mission-list{padding-top:36px}
+.mission-list .mission:last-child{border-bottom:1px solid var(--line)}
+.mission-list .mission h2{font-size:clamp(32px,3.5vw,48px);font-weight:400;letter-spacing:-.035em;line-height:1.2;margin:0 0 12px;color:var(--text)}
+.mission-list .mission-content>p{color:var(--muted)}
+.lab-page{border-bottom:0}
+.lab-page .lab-copy h2{font-weight:400;font-size:clamp(36px,4.3vw,62px);letter-spacing:-.04em;line-height:1.08;margin:0 0 20px}
+@media(max-width:680px){.page-hero{padding-block:65px 55px}.page-hero h1{font-size:64px;margin-bottom:28px}.page-hero>p:last-child{font-size:19px}.mission-list{padding-top:20px}.mission-list .mission h2{font-size:30px}.lab-page{padding-top:45px}}
+
 /* Temporary portrait tuning panel. */
 #portrait-panel{position:fixed;z-index:30;right:16px;top:16px;width:300px;max-height:calc(100dvh - 32px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;box-shadow:0 12px 40px #0005;font:13px/1.45 Montreal,sans-serif;color:var(--text);overscroll-behavior:contain}
 #portrait-panel .tuner-heading{display:flex;align-items:center;justify-content:space-between;gap:10px}#portrait-panel strong{font-weight:500}#portrait-panel button{font:inherit;background:transparent;color:var(--text);border:1px solid var(--line);border-radius:4px;padding:7px 9px}#portrait-panel button:hover{border-color:var(--accent);color:var(--accent)}#portrait-panel .tuner-hint,#tuner-status{font-size:11px;color:var(--muted);margin:12px 0}#portrait-panel .tuner-actions{display:flex;gap:7px;margin:12px 0}#portrait-panel #tuner-rebuild{flex:1;background:var(--accent);color:var(--bg);border-color:var(--accent)}#portrait-panel fieldset{border:0;border-top:1px solid var(--line);margin:20px 0 0;padding:10px 0 0}#portrait-panel legend{padding-right:8px;color:var(--accent);font-size:11px;letter-spacing:.04em}#portrait-panel .tuner-control{display:grid;grid-template-columns:1fr auto;gap:4px;margin-bottom:12px}#portrait-panel output{font-variant-numeric:tabular-nums;color:var(--muted)}#portrait-panel input[type=range]{grid-column:1/-1;width:100%;margin:0;accent-color:var(--accent);cursor:pointer;height:20px}#portrait-panel [hidden]{display:none}@media(max-width:680px){#portrait-panel{right:8px;top:8px;width:min(300px,calc(100vw - 16px));max-height:70dvh}}
