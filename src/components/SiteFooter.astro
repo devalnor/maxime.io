@@ -1,4 +1,5 @@
 ---
+import ArrowIcon from './ArrowIcon.astro';
 interface Props {
   home?: boolean;
 }
@@ -44,7 +45,7 @@ const palettes = [
       </details>
     )}
     <a class="backtop" href={home ? '#main' : '/'}>
-      {home ? 'Back to top ↑' : 'Home ↑'}
+      {home ? 'Back to top' : 'Home'} <ArrowIcon direction="up" />
     </a>
   </div>
 </footer>

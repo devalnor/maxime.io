@@ -479,11 +479,18 @@ footer {
   color: var(--muted);
 }
 .footer-inner {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
   gap: 30px;
-  flex-wrap: wrap;
+}
+.footer-inner > .palette-picker {
+  grid-column: 2;
+  justify-self: center;
+}
+.footer-inner > .backtop {
+  grid-column: 3;
+  justify-self: end;
 }
 .palette-picker {
   position: relative;
@@ -555,6 +562,16 @@ footer {
 }
 .backtop {
   font-size: 13px;
+}
+.link-arrow {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  vertical-align: -0.125em;
+}
+.backtop {
+  white-space: nowrap;
 }
 .hero-art-note {
   font-size: 12px;
@@ -762,9 +779,17 @@ footer {
     font-size: 31px;
   }
   .footer-inner {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 22px;
+    position: relative;
+    gap: 12px;
+  }
+  .footer-inner .palette-picker {
+    position: static;
+  }
+  .palette-picker .appearance {
+    left: 0;
+    right: 0;
+    width: auto;
+    max-width: none;
   }
   .appearance {
     flex-wrap: wrap;
