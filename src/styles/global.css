@@ -642,6 +642,11 @@ footer {
     gap: 0;
     padding-bottom: 44px;
   }
+  .hero-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
   .portrait {
     width: 100%;
     aspect-ratio: 1.25;
@@ -988,18 +993,22 @@ body {
 .expertise .design_cls-1,
 .expertise .techno_cls-1 {
   fill: var(--bg);
-  stroke: var(--accent);
+  stroke: var(--line);
 }
 .expertise .business_cls-2,
 .expertise .design_cls-2,
 .expertise .techno_cls-2 {
   fill: var(--surface);
-  stroke: var(--accent);
+  stroke: var(--line);
 }
 .expertise .design_cls-3,
 .expertise .design_cls-4 {
   fill: none;
-  stroke: var(--accent);
+  stroke: var(--line);
+}
+.expertise-icon .skill-svg path {
+  stroke-width: 1px;
+  vector-effect: non-scaling-stroke;
 }
 .expertise .techno_cls-3,
 .expertise .techno_cls-5 {
