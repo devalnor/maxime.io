@@ -86,6 +86,9 @@ import BusinessIcon from '../components/skills/BusinessIcon.astro';
         </p>
       </div>
       <div class="periods">
+        <div class="timeline-tornado" aria-hidden="true">
+          <canvas id="timeline-boids"></canvas>
+        </div>
         <article class="period">
           <time class="period-years">1999–2006</time>
           <div>
@@ -171,4 +174,5 @@ import BusinessIcon from '../components/skills/BusinessIcon.astro';
   </main>
   <SiteFooter home />
   <script is:inline type="module" src="/static/portrait/script.js"></script>
+  <script is:inline type="module" src="/static/portrait/timeline.js"></script>
 </BaseLayout>
