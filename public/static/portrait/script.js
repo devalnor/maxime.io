@@ -25,7 +25,7 @@ if (skillSvgs.length) {
     ).observe(document.querySelector('.expertise'));
 }
 let hue = 12,
-  paused = reduced.matches,
+  paused = false,
   available = false,
   visible = true,
   frame = 0,
@@ -259,14 +259,6 @@ function rebuildPortrait() {
   if (flock) buildPortrait();
   sync();
 }
-reduced.addEventListener('change', () => {
-  paused = reduced.matches;
-  if (paused && flock) {
-    flock.settle();
-    geometry.attributes.position.needsUpdate = true;
-  }
-  sync();
-});
 document.addEventListener('visibilitychange', sync);
 function resize() {
   if (!available) return;

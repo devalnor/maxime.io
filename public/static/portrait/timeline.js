@@ -2,7 +2,6 @@
 const host = document.querySelector('.timeline-tornado');
 const canvas = document.querySelector('#timeline-boids');
 const desktop = matchMedia('(min-width: 1001px)');
-const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 let inView = false;
 let starting = false;
 let contextLost = false;
@@ -14,7 +13,7 @@ const pointer = { active: false, x: 0, y: 0 };
 
 // Listen on the page so the decorative canvas never intercepts links or scrolling.
 document.addEventListener('pointermove', (event) => {
-  if (event.pointerType !== 'mouse' || !desktop.matches || !inView || reduced.matches) {
+  if (event.pointerType !== 'mouse' || !desktop.matches || !inView) {
     pointer.active = false;
     return;
   }
@@ -46,7 +45,7 @@ function sync() {
     return;
   }
   scene.draw(elapsed);
-  if (!reduced.matches) frame = requestAnimationFrame(animate);
+  frame = requestAnimationFrame(animate);
 }
 
 async function start() {
@@ -148,7 +147,7 @@ async function start() {
         direction.subVectors(nextPosition, dummy.position).multiplyScalar(25);
         let targetX = 0;
         let targetY = 0;
-        if (pointer.active && !reduced.matches) {
+        if (pointer.active) {
           const dx = dummy.position.x - pointer.x;
           const dy = dummy.position.y - pointer.y;
           const distance = Math.hypot(dx, dy);
@@ -162,15 +161,11 @@ async function start() {
             targetY = (ny + nx * 0.25) * force;
           }
         }
-        if (reduced.matches) {
-          bird.offsetX = bird.offsetY = bird.velocityX = bird.velocityY = 0;
-        } else {
-          // Damped springs ease away from the pointer and gently return to the flock.
-          bird.velocityX += ((targetX - bird.offsetX) * 18 - bird.velocityX * 7) * dt;
-          bird.velocityY += ((targetY - bird.offsetY) * 18 - bird.velocityY * 7) * dt;
-          bird.offsetX += bird.velocityX * dt;
-          bird.offsetY += bird.velocityY * dt;
-        }
+        // Damped springs ease away from the pointer and gently return to the flock.
+        bird.velocityX += ((targetX - bird.offsetX) * 18 - bird.velocityX * 7) * dt;
+        bird.velocityY += ((targetY - bird.offsetY) * 18 - bird.velocityY * 7) * dt;
+        bird.offsetX += bird.velocityX * dt;
+        bird.offsetY += bird.velocityY * dt;
         dummy.position.x += bird.offsetX;
         dummy.position.y += bird.offsetY;
         // Bank into the actual flight direction, including the mouse disturbance.
@@ -236,7 +231,6 @@ desktop.addEventListener('change', () => {
   scene?.resize();
   sync();
 });
-reduced.addEventListener('change', sync);
 document.addEventListener('visibilitychange', sync);
 window.addEventListener('pagehide', () => {
   releasePointer();
