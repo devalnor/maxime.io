@@ -1137,12 +1137,12 @@ body {
   width: 100%;
   margin-top: 70px;
   grid-template-columns: minmax(0, 1fr);
-  padding-right: 32%;
+  padding-right: 36%;
 }
 .timeline-tornado {
   position: absolute;
   inset: 0 0 0 auto;
-  width: 30%;
+  width: 34%;
   pointer-events: none;
 }
 .timeline-tornado canvas {

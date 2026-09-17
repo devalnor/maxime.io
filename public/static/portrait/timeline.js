@@ -1,7 +1,8 @@
-// A growing spiral: sparse in the early years, dense towards the present.
+// A dense murmuration: a circulating volume folded by shared travelling waves.
 const host = document.querySelector('.timeline-tornado');
 const canvas = document.querySelector('#timeline-boids');
 const desktop = matchMedia('(min-width: 1001px)');
+const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 let inView = false;
 let starting = false;
 let contextLost = false;
@@ -45,7 +46,7 @@ function sync() {
     return;
   }
   scene.draw(elapsed);
-  frame = requestAnimationFrame(animate);
+  if (!reduced.matches) frame = requestAnimationFrame(animate);
 }
 
 async function start() {
@@ -69,9 +70,9 @@ async function start() {
       1, 0, 0, -0.65, -0.65, 0.35, -0.65, 0.65, 0.35,
     ], 3));
     const material = new THREE.MeshBasicMaterial({
-      side: THREE.DoubleSide, transparent: true, opacity: 0.8,
+      side: THREE.DoubleSide, transparent: true, opacity: 0.88,
     });
-    const count = 1200;
+    const count = 4800;
     const birds = new THREE.InstancedMesh(geometry, material, count);
     birds.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
     birds.frustumCulled = false;
@@ -81,6 +82,7 @@ async function start() {
     const nextPosition = new THREE.Vector3();
     const forward = new THREE.Vector3(1, 0, 0);
     const tint = new THREE.Color();
+    const birdTint = new THREE.Color();
     let width = 1;
     let height = 1;
     let currentHue = '';
@@ -91,21 +93,25 @@ async function start() {
       seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
       return seed / 4294967296;
     };
-    const flock = Array.from({ length: count }, () => ({
-      depth: Math.pow(random(), 0.36),
-      // Three loose streams make the spiral readable without rigid rings.
-      phase: Math.floor(random() * 3) * Math.PI * 2 / 3 + random() * 1.5,
-      radius: 0.55 + random() * 0.45,
-      size: 1.5 + random() * 1.8,
-      brightness: 0.4 + random() * 0.6,
-      speed: 0.85 + random() * 0.3,
-      turbulence: random() * Math.PI * 2,
-      wander: random() < 0.14 ? 1 : 0,
-      offsetX: 0,
-      offsetY: 0,
-      velocityX: 0,
-      velocityY: 0,
-    }));
+    const flock = Array.from({ length: count }, () => {
+      // Sample a filled sphere, not a shell or separate spiral tracks.
+      const latitude = random() * 2 - 1;
+      const phase = random() * Math.PI * 2;
+      const radius = Math.cbrt(random());
+      const ring = Math.sqrt(1 - latitude * latitude) * radius;
+      return {
+        x: Math.cos(phase) * ring,
+        y: latitude * radius,
+        z: Math.sin(phase) * ring,
+        phase,
+        size: 0.65 + random() * 0.85,
+        brightness: 0.48 + random() * 0.52,
+        offsetX: 0,
+        offsetY: 0,
+        velocityX: 0,
+        velocityY: 0,
+      };
+    });
     function color() {
       const hue = getComputedStyle(document.documentElement).getPropertyValue('--h').trim();
       if (hue === currentHue) return;
@@ -117,25 +123,38 @@ async function start() {
       birds.instanceColor.needsUpdate = true;
     }
     function positionAt(bird, time, target) {
-      const u = bird.depth;
-      const noise = bird.turbulence;
-      // Smooth, overlapping eddies keep the motion organic, without frame-to-frame jitter.
-      const eddy = Math.sin(time * 0.27 + u * 17 + noise);
-      const flutter = Math.sin(time * 0.43 + noise * 2.3);
-      const excursion = bird.wander * Math.pow((Math.sin(time * 0.21 + noise) + 1) / 2, 3);
-      // Rotation accelerates towards the dense base; individual birds still vary slightly.
-      const angularSpeed = (0.055 + Math.pow(u, 1.8) * 0.38) * bird.speed;
-      const angle = bird.phase + u * 12 + time * angularSpeed + eddy * 0.48 + flutter * 0.16;
-      const radius = (7 + Math.pow(u, 2.1) * width * 0.36)
-        * (bird.radius + eddy * 0.12) + excursion * width * 0.065 * (0.2 + u);
-      const bend = Math.sin(u * 5 + time * 0.11) * width * 0.045;
+      // Circulation carries birds through the volume. Nearby birds share the
+      // same flow; their individual phases never drive the flock's silhouette.
+      const turn = time * 0.24;
+      const u = bird.y * Math.cos(turn) - bird.z * Math.sin(turn);
+      const v = bird.y * Math.sin(turn) + bird.z * Math.cos(turn);
+      const twist = u * 1.5 + time * 0.16;
+      const cross = bird.x * Math.cos(twist) - v * Math.sin(twist);
+      const depth = bird.x * Math.sin(twist) + v * Math.cos(twist);
+      // Overlapping swells travel at different rates, so the whole mass never
+      // straightens into one ribbon. Keep the cross-section full even at a neck.
+      const wave = u * 4.2 - time * 0.43;
+      const swell = u * 6.3 + time * 0.29;
+      const fullness = 0.9 + 0.13 * Math.sin(swell) + 0.09 * Math.cos(wave);
+      const stretch = 0.83 + 0.12 * Math.sin(time * 0.27);
+      const spine = Math.sin(wave) * 0.14 + Math.sin(swell) * 0.075;
+      const driftX = Math.sin(time * 0.19) * 0.025;
+      const driftY = Math.sin(time * 0.23) * 0.035;
+      const roll = 0.35 * Math.sin(time * 0.21 + u * 2.4);
+      const belly = cross * Math.cos(roll) - depth * Math.sin(roll);
+      const away = cross * Math.sin(roll) + depth * Math.cos(roll);
+      const x = spine + belly * 0.39 * fullness
+        + Math.sin(depth * 3 + wave) * 0.045 + driftX;
+      // Smooth compression leaves a margin while allowing the lobes to expand.
       target.set(
-        Math.cos(angle) * radius + bend + flutter * width * 0.022 * (0.2 + u),
-        height * (0.46 - u * 0.88) + Math.sin(angle) * width * 0.045 * u
-          + Math.sin(Math.PI * u) * height * 0.024 * eddy + flutter * 5,
-        Math.sin(angle) * radius + flutter * width * 0.035,
+        width * 0.47 * Math.tanh(x / 0.47),
+        height * (u * 0.33 * stretch + driftY
+          + belly * Math.cos(wave) * 0.075
+          + away * Math.sin(swell) * 0.045 + Math.sin(wave) * 0.045),
+        width * (away * 0.46 * fullness + Math.sin(wave) * 0.16),
       );
     }
+
     function draw(time) {
       const dt = Math.min(0.05, Math.max(0, time - previousDrawTime));
       previousDrawTime = time;
@@ -173,12 +192,22 @@ async function start() {
         direction.y += bird.velocityY;
         direction.normalize();
         dummy.quaternion.setFromUnitVectors(forward, direction);
-        dummy.rotateX(Math.sin(time * 0.43 + bird.turbulence) * 0.7);
-        dummy.scale.setScalar(bird.size);
+        dummy.rotateX(Math.sin(time * 0.7 + bird.y * 3) * 0.65);
+        // Small wingbeats keep individual silhouettes alive within the mass.
+        const wingbeat = 0.72 + 0.28 * Math.sin(time * 9 + bird.phase);
+
+        // Depth stays legible with an orthographic camera: closer birds are
+        // larger and brighter, distant birds recede into the body of the flock.
+        const depthCue = Math.max(-1, Math.min(1, dummy.position.z / (width * 0.65)));
+        const size = bird.size * (1 + depthCue * 0.38);
+        dummy.scale.set(size, size * wingbeat, size);
+        birdTint.copy(tint).multiplyScalar(bird.brightness * (0.78 + depthCue * 0.22));
+        birds.setColorAt(i, birdTint);
         dummy.updateMatrix();
         birds.setMatrixAt(i, dummy.matrix);
       }
       birds.instanceMatrix.needsUpdate = true;
+      birds.instanceColor.needsUpdate = true;
       renderer.render(world, camera);
     }
     function resize() {
@@ -231,6 +260,7 @@ desktop.addEventListener('change', () => {
   scene?.resize();
   sync();
 });
+reduced.addEventListener('change', sync);
 document.addEventListener('visibilitychange', sync);
 window.addEventListener('pagehide', () => {
   releasePointer();
