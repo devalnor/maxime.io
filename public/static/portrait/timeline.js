@@ -9,7 +9,8 @@ let contextLost = false;
 let scene;
 let frame = 0;
 let last = 0;
-let elapsed = 0;
+// Start at a different point in the slow movement on each page load.
+let elapsed = Math.random() * 600;
 const pointer = { active: false, x: 0, y: 0 };
 
 // Listen on the page so the decorative canvas never intercepts links or scrolling.
@@ -123,6 +124,7 @@ async function start() {
       birds.instanceColor.needsUpdate = true;
     }
     function positionAt(bird, time, target) {
+      time *= 0.18;
       // Circulation carries birds through the volume. Nearby birds share the
       // same flow; their individual phases never drive the flock's silhouette.
       const turn = time * 0.24;
@@ -148,7 +150,7 @@ async function start() {
       // Smooth compression leaves a margin while allowing the lobes to expand.
       target.set(
         width * 0.47 * Math.tanh(x / 0.47),
-        height * (u * 0.33 * stretch + driftY
+        height * 1.2 * (u * 0.40 * stretch + driftY
           + belly * Math.cos(wave) * 0.075
           + away * Math.sin(swell) * 0.045 + Math.sin(wave) * 0.045),
         width * (away * 0.46 * fullness + Math.sin(wave) * 0.16),
@@ -164,25 +166,27 @@ async function start() {
         positionAt(bird, time, dummy.position);
         positionAt(bird, time + 0.04, nextPosition);
         direction.subVectors(nextPosition, dummy.position).multiplyScalar(25);
-        let targetX = 0;
-        let targetY = 0;
+        let forceX = 0;
+        let forceY = 0;
         if (pointer.active) {
-          const dx = dummy.position.x - pointer.x;
-          const dy = dummy.position.y - pointer.y;
+          const dx = dummy.position.x + bird.offsetX - pointer.x;
+          const dy = dummy.position.y + bird.offsetY - pointer.y;
           const distance = Math.hypot(dx, dy);
           if (distance < reach) {
             const falloff = 1 - distance / reach;
-            const force = reach * 0.8 * falloff * falloff;
+            const force = reach * 3 * falloff * falloff;
             const nx = distance > 0.001 ? dx / distance : Math.cos(bird.phase);
             const ny = distance > 0.001 ? dy / distance : Math.sin(bird.phase);
             // A little sideways curl makes the avoidance feel like a local gust.
-            targetX = (nx - ny * 0.25) * force;
-            targetY = (ny + nx * 0.25) * force;
+            forceX = (nx - ny * 0.25) * force;
+            forceY = (ny + nx * 0.25) * force;
           }
         }
-        // Damped springs ease away from the pointer and gently return to the flock.
-        bird.velocityX += ((targetX - bird.offsetX) * 18 - bird.velocityX * 7) * dt;
-        bird.velocityY += ((targetY - bird.offsetY) * 18 - bird.velocityY * 7) * dt;
+        // Dampen momentum, not displacement: the mouse leaves a lasting change
+        // in the flock instead of pulling birds back to their original tracks.
+        const damping = Math.exp(-2.4 * dt);
+        bird.velocityX = (bird.velocityX + forceX * dt) * damping;
+        bird.velocityY = (bird.velocityY + forceY * dt) * damping;
         bird.offsetX += bird.velocityX * dt;
         bird.offsetY += bird.velocityY * dt;
         dummy.position.x += bird.offsetX;
@@ -192,7 +196,7 @@ async function start() {
         direction.y += bird.velocityY;
         direction.normalize();
         dummy.quaternion.setFromUnitVectors(forward, direction);
-        dummy.rotateX(Math.sin(time * 0.7 + bird.y * 3) * 0.65);
+        dummy.rotateX(Math.sin(time * 0.126 + bird.y * 3) * 0.65);
         // Small wingbeats keep individual silhouettes alive within the mass.
         const wingbeat = 0.72 + 0.28 * Math.sin(time * 9 + bird.phase);
 
