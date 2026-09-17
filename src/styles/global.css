@@ -1276,6 +1276,7 @@ body {
 
 @media (max-width: 680px) {
   .hero-copy > .eyebrow {
+    margin-block: 40px;
     margin-inline: auto;
     text-align: center;
   }

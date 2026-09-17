@@ -282,11 +282,13 @@ function resize() {
   renderer.setSize(width, height, false);
   const scale = sceneScale;
   const size = Math.min(anchor.width * 1.2, anchor.height * 1.12);
+  const mobile = matchMedia('(max-width: 680px)').matches;
   // On mobile, align the artwork with the hero's 20px right inset.
-  const left = matchMedia('(max-width: 680px)').matches
+  const left = mobile
     ? anchor.right - r.left - size
     : anchor.left - r.left - anchor.width * 0.16;
-  const top = anchor.top + scrollY + (anchor.height - size) / 2 - 8;
+  // Keep the enlarged mobile portrait below the sticky header.
+  const top = anchor.top + scrollY + (mobile ? 0 : (anchor.height - size) / 2 - 8);
   // Off-axis perspective: keep the optical center on the portrait while
   // the same canvas spans the document. z=0 still maps exactly to DOM pixels.
   const cameraX = (left + size * 0.66 - width / 2) * scale;
