@@ -103,6 +103,13 @@ summary:focus-visible {
   background: var(--bg);
   border-bottom: 1px solid var(--line);
 }
+@supports ((backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px))) {
+  .site-header {
+    background: hsl(var(--h) 19% 9% / 2%);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+}
 .header-inner {
   display: flex;
   align-items: center;
