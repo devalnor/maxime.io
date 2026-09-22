@@ -13,12 +13,13 @@
 }
 :root {
   --h: 12;
-  --bg: hsl(var(--h) 19% 9%);
-  --surface: hsl(var(--h) 17% 12%);
-  --text: hsl(var(--h) 42% 90%);
-  --muted: hsl(var(--h) 17% 69%);
-  --accent: hsl(var(--h) 61% 72%);
-  --line: hsl(var(--h) 18% 26%);
+  --s: 1;
+  --bg: hsl(var(--h) calc(19% * var(--s)) 9%);
+  --surface: hsl(var(--h) calc(17% * var(--s)) 12%);
+  --text: hsl(var(--h) calc(42% * var(--s)) 90%);
+  --muted: hsl(var(--h) calc(17% * var(--s)) 69%);
+  --accent: hsl(var(--h) calc(61% * var(--s)) 72%);
+  --line: hsl(var(--h) calc(18% * var(--s)) 26%);
   color-scheme: dark;
 }
 * {
@@ -105,7 +106,7 @@ summary:focus-visible {
 }
 @supports ((backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px))) {
   .site-header {
-    background: hsl(var(--h) 19% 9% / 2%);
+    background: hsl(var(--h) calc(19% * var(--s)) 9% / 2%);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
   }
@@ -832,8 +833,8 @@ footer {
   }
 }
 :root {
-  --bg: hsl(calc(var(--h) - 35) 20% 10%);
-  --surface: hsl(calc(var(--h) - 35) 17% 13%);
+  --bg: hsl(calc(var(--h) - 35) calc(20% * var(--s)) 10%);
+  --surface: hsl(calc(var(--h) - 35) calc(17% * var(--s)) 13%);
 }
 .portrait {
   margin: 0;

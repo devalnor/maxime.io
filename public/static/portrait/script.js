@@ -24,7 +24,8 @@ if (skillSvgs.length) {
       { threshold: 0.25 }
     ).observe(document.querySelector('.expertise'));
 }
-let hue = 12,
+let sat = 1,
+  hue = 12,
   paused = false,
   available = false,
   visible = true,
@@ -192,9 +193,11 @@ function syncBoidLayers() {
       layer.g.attributes[name].needsUpdate = true;
   }
 }
-function applyHue(value) {
+function applyHue(value, saturation = 1) {
   hue = value;
+  sat = saturation;
   root.style.setProperty('--h', String(hue));
+  root.style.setProperty('--s', String(sat));
   document
     .querySelectorAll('[data-hue]')
     .forEach((b) =>
@@ -203,7 +206,7 @@ function applyHue(value) {
         String(Math.abs(Number(b.dataset.hue) - hue) < 1)
       )
     );
-  if (material) material.uniforms.tint.value.setHSL(hue / 360, 0.61, 0.72);
+  if (material) material.uniforms.tint.value.setHSL(hue / 360, 0.61 * sat, 0.72);
   paint();
 }
 document
@@ -224,7 +227,10 @@ document.querySelector('#color').addEventListener('input', (e) => {
     : max === g
     ? 60 * ((b - r) / d + 2)
     : 60 * ((r - g) / d + 4);
-  applyHue((h + 360) % 360);
+  const l = (max + min) / 2,
+    s = !d ? 0 : d / (1 - Math.abs(2 * l - 1));
+  // ponytail: saturation scaled against the accent token (61%), clamped so the dark bg stays readable
+  applyHue((h + 360) % 360, Math.min(1.3, s / 0.61));
 });
 const smooth = (a, b, x) => {
   const t = Math.max(0, Math.min(1, (x - a) / (b - a)));
@@ -428,7 +434,7 @@ async function init() {
       transparent: true,
       depthWrite: true,
       uniforms: {
-        tint: { value: new THREE.Color().setHSL(hue / 360, 0.61, 0.72) },
+        tint: { value: new THREE.Color().setHSL(hue / 360, 0.61 * sat, 0.72) },
         pixelRatio: { value: 1 },
       },
       vertexShader: `attribute float opacity;attribute float level;attribute float size;attribute float angle;attribute float travel;uniform float pixelRatio;varying float vLevel;varying float vAngle;varying float vTravel;varying float vEdge;void main(){vLevel=level*opacity;vAngle=angle;vTravel=travel;vec4 p=modelViewMatrix*vec4(position,1.);gl_Position=projectionMatrix*p;vEdge=1.-smoothstep(.93,1.,abs(gl_Position.x/gl_Position.w));gl_PointSize=(size+travel*2.8)*pixelRatio*(180./max(1.,-p.z));}`,

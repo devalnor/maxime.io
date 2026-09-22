@@ -114,10 +114,12 @@ async function start() {
       };
     });
     function color() {
-      const hue = getComputedStyle(document.documentElement).getPropertyValue('--h').trim();
-      if (hue === currentHue) return;
-      currentHue = hue;
-      tint.setHSL((Number(hue) || 0) / 360, 0.61, 0.72);
+      const style = getComputedStyle(document.documentElement);
+      const hue = style.getPropertyValue('--h').trim();
+      const sat = style.getPropertyValue('--s').trim() || '1';
+      if (hue + '|' + sat === currentHue) return;
+      currentHue = hue + '|' + sat;
+      tint.setHSL((Number(hue) || 0) / 360, 0.61 * Number(sat), 0.72);
       for (let i = 0; i < count; i++) {
         birds.setColorAt(i, tint.clone().multiplyScalar(flock[i].brightness));
       }
